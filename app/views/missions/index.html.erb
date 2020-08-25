@@ -2,7 +2,7 @@
   <% @missions.each do |mission| %>
     <div class="card mb-3 p-2">
       <div>
-        <%= "Mission: #{mission.title}" %>
+        <%=link_to "Mission: #{mission.title}", mission_path(mission) %>
       </div>
       <div>
         <%="Charity: #{mission.charity.name}"%>
@@ -13,4 +13,5 @@
     </div>
   <% end %>
    <%= link_to 'Home', root_path, class: "btn btn-sm btn-primary"%>
+
 </div>
