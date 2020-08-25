@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [:home]
   before_action :authenticate_user!, only: [:dashboard]
 
   def home
@@ -9,6 +9,6 @@ class PagesController < ApplicationController
   def dashboard
     @my_mission = current_user.missions
     @missions_ive_posted = current_user.missions
-    @missions_people_applied = current_user.missions_bookings
+    @missions_people_applied = current_user.missions.bookings
   end
 end
