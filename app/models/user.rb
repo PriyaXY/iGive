@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :bookings
   has_many :missions, through: :bookings
-  has_many :charities
+  has_one :charity
   # has_many :experiences
   # has_many :missions through: :experiences
 end

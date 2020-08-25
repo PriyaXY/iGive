@@ -14,9 +14,8 @@ class MissionsController < ApplicationController
 
   def create
     @mission = Mission.new(strong_params)
-    @charity = Charity.find(params[:charity_id])
+    @charity = current_user.charity
     @mission.charity = @charity
-    @mission.user = current_user
     if @mission.save
       redirect_to root_path
     else
