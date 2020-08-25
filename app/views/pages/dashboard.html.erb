@@ -1,7 +1,7 @@
 
 <h2>My Pending missions</h2>
 
-<% @missions_ive_posted.where(accepted: false).each do |booking| %>
+<% @missions_ive_posted.where(status: 'pending').each do |booking| %>
 
 <h4><%= mission.name.capitalize %></h4>
 <p>Starting on <%= mission.start_date.strftime("%d/%m/%Y") %></p>
@@ -12,3 +12,18 @@
 </div>
 <% end %>
 
+<!--
+
+case 1. dashboard for user with charity
+- can edit charity information
+- can see accepted / rejected missions
+- can see pending missions
+
+
+case 2. dashboard for user without charity
+-
+-
+-
+-
+
+ -->
