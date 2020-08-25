@@ -9,4 +9,8 @@ class User < ApplicationRecord
   has_one :charity
   # has_many :experiences
   # has_many :missions through: :experiences
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true, uniqueness: true
 end

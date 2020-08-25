@@ -1,3 +1,14 @@
 
-<%=@missions_ive_posted  %>
-<%= @missions_people_applied  %>
+<h2>My Pending missions</h2>
+
+<% @missions_ive_posted.where(accepted: false).each do |booking| %>
+
+<h4><%= mission.name.capitalize %></h4>
+<p>Starting on <%= mission.start_date.strftime("%d/%m/%Y") %></p>
+    <%= link_to 'Edit your mission', edit_mission_path(mission) %>
+    <%= link_to "Delete mission", mission_path(mission),
+        method: :delete,
+        data: {confirm: "are you sure"} %>
+</div>
+<% end %>
+

@@ -23,6 +23,18 @@ class MissionsController < ApplicationController
     end
   end
 
+  def edit
+    @mission = Mission.find(params[:id])
+  end
+
+  def update
+    if current_user.missions.update(strong_params)
+      redirect_to home_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def strong_params
