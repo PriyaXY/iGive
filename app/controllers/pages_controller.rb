@@ -7,7 +7,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @my_mission = current_user.missions
     @missions_ive_posted = current_user.missions
     @missions_people_applied = current_user.missions.bookings
   end
