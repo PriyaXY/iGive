@@ -4,8 +4,9 @@ class MissionsController < ApplicationController
   end
 
   def show
-    @charity = Mission.find(params[:id])
+
     @mission = Mission.new
+    @charity = Mission.find(params[:id])
   end
 
   def index
