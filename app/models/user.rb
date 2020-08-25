@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :bookings
-  has_many :missions through: :bookings
+  has_many :missions, through: :bookings
   has_many :charities
   # has_many :experiences
   # has_many :missions through: :experiences
