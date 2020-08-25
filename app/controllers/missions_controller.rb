@@ -1,10 +1,8 @@
 class MissionsController < ApplicationController
-
-
   def new
     @mission = Mission.new
   end
-  
+
   def show
   @mission = Mission.new
   @mission = Mission.find(params[:id])
@@ -13,7 +11,7 @@ class MissionsController < ApplicationController
     @mission = Mission.new
     @mission = Mission.find(params[:id])
   end
-      
+
   def index
     @missions = Mission.all
   end
@@ -38,5 +36,4 @@ class MissionsController < ApplicationController
   def strong_params
     params.require(:mission).permit(:start_date, :title, :description, :address, :number_of_volunteers)
   end
-
 end
