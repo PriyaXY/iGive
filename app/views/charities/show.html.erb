@@ -1,0 +1,36 @@
+<div class="container">
+
+<h1 class="my-4">More info on Your Selected Charity </h1>
+
+
+  <div class="d-flex flex-row bd-highlight mb-3">
+     <div class="p-2 bd-highlight">
+      <div class="card mb-3">
+        <div class="card-body">
+          <ul class="list-group">
+          <table class="table table-borderless table-sm">
+              <tr>
+                <td>Name:</td>
+                <td><span class="text-secondary"><%= @charity.name %></span></td>
+              </tr>
+              <tr>
+                <td>Phone Number:</td>
+                <td><span class="text-secondary"><%= @charity.phone_number%></span></td>
+              </tr>
+              <tr>
+                <td>Description:</td>
+                <td><span class="text-secondary"><%= @charity.description %></span></td>
+              </tr>
+              <tr>
+                <td>Website:</td>
+                <td><span class="text-secondary"><%= @charity.website %></span></td>
+              </tr>
+          </table>
+       </div>
+      </div>
+     </div>
+   </div>
+
+
+
+</div>
