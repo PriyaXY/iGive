@@ -3,18 +3,18 @@
       <%= simple_form_for [ @charity ] do |f| %>
   <div class="form-row">
       <div class="form-group col-md-6">
-      <%= f.label :charity_name %>
+      <%#= f.label :charity_name %>
       <%= f.input :name %>
       </div>
       <div class="form-group col-md-6">
-      <%= f.label :more_information %>
-      <%= f.input :description, input_html: { placeholder: 'Some more information aboutn your charity here...'} as: :text, :input_html => { cols: 5, rows: 6, maxlength: 1000} %>
+      <%#= f.label :more_information %>
+      <%= f.input :description, input_html: { placeholder: 'Some more information aboutn your charity here...'} %>
       </div>
       <div class="form-group col-md-3">
       <%= f.input :phone_number%>
       </div>
       <div class="form-group col-md-3">
-      <%= f.label :charity_website_link %>
+      <%#= f.label :charity_website_link %>
       <%= f.input :website, input_html: { placeholder: 'charity website url...'} %>
   </div>
   <!-- <div class=""> -->
