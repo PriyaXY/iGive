@@ -1,0 +1,27 @@
+<div class="container">
+  <h1 class="my-4">Add Your Charity Here:</h1>
+      <%= simple_form_for [ @charity ] do |f| %>
+  <div class="form-row">
+      <div class="form-group col-md-6">
+      <%= f.label :charity_name %>
+      <%= f.input :name %>
+      </div>
+      <div class="form-group col-md-6">
+      <%= f.label :more_information %>
+      <%= f.input :description, input_html: { placeholder: 'Some more information aboutn your charity here...'} as: :text, :input_html => { cols: 5, rows: 6, maxlength: 1000} %>
+      </div>
+      <div class="form-group col-md-3">
+      <%= f.input :phone_number%>
+      </div>
+      <div class="form-group col-md-3">
+      <%= f.label :charity_website_link %>
+      <%= f.input :website, input_html: { placeholder: 'charity website url...'} %>
+  </div>
+  <!-- <div class=""> -->
+      <%#= f.input :photos, input_html: {multiple: true}, as: :file, :label => "Upload boat photos",class: "btn btn-primary" %>
+      <%#= f.submit "Submit", class: "btn btn-primary" %>
+  <!-- </div> -->
+  <% end %>
+
+  </div>
+</div>
