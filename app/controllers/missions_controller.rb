@@ -1,6 +1,4 @@
 class MissionsController < ApplicationController
-
-
   def new
     @mission = Mission.new
   end
@@ -31,5 +29,4 @@ class MissionsController < ApplicationController
   def strong_params
     params.require(:mission).permit(:start_date, :title, :description, :address, :number_of_volunteers)
   end
-
 end

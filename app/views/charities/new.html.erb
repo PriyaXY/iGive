@@ -1,21 +1,23 @@
 <div class="container">
   <h1 class="my-4">Add Your Charity Here:</h1>
       <%= simple_form_for [ @charity ] do |f| %>
-  <div class="form-row">
-      <div class="form-group col-md-6">
+  <div>
+      <div >
       <%#= f.label :charity_name %>
-      <%= f.input :name %>
+        <%= f.input :name %>
       </div>
-      <div class="form-group col-md-6">
-      <%#= f.label :more_information %>
-      <%= f.input :description, input_html: { placeholder: 'Some more information aboutn your charity here...'} %>
+      <div >
+        <%= f.input :phone_number%>
       </div>
-      <div class="form-group col-md-3">
-      <%= f.input :phone_number%>
-      </div>
-      <div class="form-group col-md-3">
+      <div >
       <%#= f.label :charity_website_link %>
-      <%= f.input :website, input_html: { placeholder: 'charity website url...'} %>
+        <%= f.input :website, input_html: { placeholder: "Your charity's website url..."} %>
+      <div >
+      <%#= f.label :more_information %>
+        <%= f.input :description, input_html: { placeholder: 'Some more information aboutn your charity here...'} %>
+      </div>
+
+      <%= f.submit "Submit", class: "btn btn-primary" %>
   </div>
   <!-- <div class=""> -->
       <%#= f.input :photos, input_html: {multiple: true}, as: :file, :label => "Upload boat photos",class: "btn btn-primary" %>
