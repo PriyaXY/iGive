@@ -1,0 +1,11 @@
+<%= simple_form_for [ @mission ] do |f| %>
+<h1>please enter your mission information below</h1>
+  <%= f.input :start_date%>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :number_of_volunteers %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to 'home', root_path, class: "btn btn-primary"%>
