@@ -5,9 +5,7 @@ class MissionsController < ApplicationController
   end
 
   def show
-
-    @mission = Mission.new
-    @charity = Mission.find(params[:id])
+    @mission = Mission.find(params[:id])
   end
 
   def index
@@ -36,8 +34,6 @@ class MissionsController < ApplicationController
       render :edit
     end
   end
-
-
 
   private
 
