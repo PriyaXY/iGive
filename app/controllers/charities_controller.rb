@@ -1,4 +1,10 @@
 class CharitiesController < ApplicationController
+
+  def show
+  @charity = Charity.new
+  @charity = Charity.find(params[:user_id])
+  end
+  
   def new
     @charity = Charity.new
   end
@@ -17,5 +23,5 @@ class CharitiesController < ApplicationController
 
   def charity_params
     params.require(:charity).permit(:user_id, :name, :phone_number, :description, :website)
-  end
+
 end
