@@ -1,4 +1,4 @@
-<%= simple_form_for [ @mission ] do |f| %>
+<%= simple_form_for([ @charity, @mission ]) do |f| %>
 <h1>please enter your mission information below</h1>
   <%= f.input :start_date%>
   <%= f.input :title %>

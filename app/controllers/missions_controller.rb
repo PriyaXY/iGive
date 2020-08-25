@@ -4,8 +4,8 @@ class MissionsController < ApplicationController
   end
 
   def show
-  @mission = Mission.new
-  @mission = Mission.find(params[:id])
+    @charity = Mission.find(params[:id])
+    @mission = Mission.new
   end
 
   def index
@@ -14,9 +14,6 @@ class MissionsController < ApplicationController
 
   def create
     @mission = Mission.new(strong_params)
-    # @boat = Boat.find(params[:boat_id])
-    # @booking.boat = @boat
-    # @booking.user = current_user
     @charity = Charity.find(params[:charity_id])
     @mission.charity = @charity
     @mission.user = current_user
