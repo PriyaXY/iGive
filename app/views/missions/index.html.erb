@@ -1,7 +1,16 @@
 <div class="container">
   <% @missions.each do |mission| %>
-    <%= mission.title %>
-    <%=mission.charity.name%>
-     <%=mission.address%>
+    <div class="card mb-3 p-2">
+      <div>
+        <%= "Mission: #{mission.title}" %>
+      </div>
+      <div>
+        <%="Charity: #{mission.charity.name}"%>
+      </div>
+      <div>
+        <%="Location: #{mission.address}"%>
+      </div>
+    </div>
   <% end %>
+   <%= link_to 'Home', root_path, class: "btn btn-sm btn-primary"%>
 </div>
