@@ -10,6 +10,15 @@ class MissionsController < ApplicationController
 
   def index
     @missions = Mission.all
+  #    @missions = Mission.geocoded
+
+  #   @markers = @missions.map do |mission|
+  #     {
+  #       lat: flat.latitude,
+  #       lng: flat.longitude
+  #     }
+  #   end
+  # end
   end
 
   def create
