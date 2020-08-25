@@ -1,0 +1,7 @@
+<div class="container">
+  <% @missions.each do |mission| %>
+    <%= mission.title %>
+    <%=mission.charity.name%>
+     <%=mission.address%>
+  <% end %>
+</div>
