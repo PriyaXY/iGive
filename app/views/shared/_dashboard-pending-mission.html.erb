@@ -1,14 +1,10 @@
-<% @missions_people_applied.where(status: "accepted").each do |mission| %>
+<% mission.each do |booking| %>
 <div class="col-md-12">
   <div class="card-body">
      <p class="card-text">
-        <h4 class="purple"><%= booking.boat.name.capitalize %></h4>
-        booked from <%= booking.start_date.strftime("%d/%m/%Y") %>
-        to <%= booking.end_date.strftime("%d/%m/%Y") %>
+        <h4 class="purple"><%= booking.mission.title.capitalize %></h4>
+         <%= booking.mission.start_date.strftime("%d/%m/%Y") %>
+
       </p>
-      <%= link_to 'Edit your booking', edit_booking_path(booking), class: "btn btn-primary" %>
-      <%= link_to "Delete booking", booking_path(booking), class: "btn btn-warning",
-          method: :delete,
-          data: {confirm: "are you sure"} %>
   </div>
 <% end %>
