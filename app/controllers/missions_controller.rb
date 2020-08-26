@@ -47,6 +47,6 @@ class MissionsController < ApplicationController
   private
 
   def strong_params
-    params.require(:mission).permit(:start_date, :title, :description, :address, :number_of_volunteers)
+    params.require(:mission).permit(:start_date, :title, :description, :address, :number_of_volunteers, photos: [])
   end
 end

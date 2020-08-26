@@ -2,6 +2,7 @@ class Mission < ApplicationRecord
   belongs_to :charity
   has_many :bookings
   has_many :users, through: :bookings
+  has_many_attached :photos
   # has_many :experiences
   validates :title, presence: true, uniqueness: true
   validates :description, presence: true, length: { maximum: 1000 }
