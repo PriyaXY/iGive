@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   get "/dashboard", to: "pages#dashboard", as: 'dashboard'
-  get "/dashboard/:mission", to: "missions#accept_mission", as: 'confirmed'
+  get "accept_booking/:booking", to: "bookings#accept_booking", as: 'accept_booking'
 
   resources :charities, only: [:new, :create, :show]
   resources :missions do
