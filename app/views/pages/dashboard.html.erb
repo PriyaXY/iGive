@@ -1,29 +1,31 @@
+<div class="container">
+  <div class="mx-auto">
+    <div class="">
+      <!-- summary box for:
+        - User welcome message
+        - User email
+        - User badge level
+       -->
+    </div>
 
-<h2>My Pending missions</h2>
+    <div class="">
+      <!-- summary box for:
+        - x days left before next mission
+        - mission completed
+       -->
+    </div>
+    <h1>Missions</h1>
+      <h2>My Pending missions</h2>
+      <%= render "dashboard-pending-mission", mission: @mission %>
+    </div>
 
-<% @missions_ive_posted.where(status: 'pending').each do |booking| %>
+    <div class="mx-auto">
+      <h2>My Pending missions</h2>
+      <%= render "dashboard-upcoming-mission", mission: @mission %>
+    </div>
 
-<h4><%= mission.name.capitalize %></h4>
-<p>Starting on <%= mission.start_date.strftime("%d/%m/%Y") %></p>
-    <%= link_to 'Edit your mission', edit_mission_path(mission) %>
-    <%= link_to "Delete mission", mission_path(mission),
-        method: :delete,
-        data: {confirm: "are you sure"} %>
+    <div class="mx-auto">
+      <h2>My Pending missions</h2>
+      <%= render "dashboard-completed-mission", mission: @mission %>
+    </div>
 </div>
-<% end %>
-
-<!--
-
-case 1. dashboard for user with charity
-- can edit charity information
-- can see accepted / rejected missions
-- can see pending missions
-
-
-case 2. dashboard for user without charity
--
--
--
--
-
- -->
