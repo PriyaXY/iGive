@@ -29,5 +29,4 @@ class PagesController < ApplicationController
     end
     return charity_bookings
   end
-
 end
