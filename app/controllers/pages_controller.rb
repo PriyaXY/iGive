@@ -7,7 +7,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @missions_completed = Mission.select { |mission| mission.mission_completed? }
     @charity_missions = current_user.missions
     volunteer_bookings = current_user.bookings
     @pending_volunteer_bookings = []
@@ -32,4 +31,10 @@ class PagesController < ApplicationController
     return charity_bookings
   end
 
+  def mission_completed
+    @volunteer_completed_missions = []
+    @accepted_volunteer_bookings.each do |booking|
+      @volunteer_completed_missions << booking if Date.today > booking.start_date
+    end
+  end
 end

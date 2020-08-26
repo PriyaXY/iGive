@@ -1,41 +1,40 @@
-
-<div class="container">
-
-
-  <div class="mx-auto">
-    <div class="">
-      <!-- summary box for:
-        - User welcome message
-        - User email
-        - User badge level
-       -->
-    </div>
-
-    <div class="">
-      <!-- summary box for:
-        - x days left before next mission
-        - mission completed
-       -->
-    </div>
-    <h1>Missions</h1>
-      <h2>My Pending missions</h2>
-      <%= render "shared/dashboard-pending-mission", mission: @pending_volunteer_bookings %>
-    </div>
-
-    <!-- <div class="mx-auto">
-      <h2>My Pending missions</h2>
-      <%#= render "shared/dashboard-upcoming-mission", mission: @accepted_volunteer_bookings %>
-    </div> -->
-
-    <!-- <div class="mx-auto">
-      <h2>My Pending missions</h2>
-      <%#= render "dashboard-completed-mission", mission: @mission %>
-    </div> -->
-</div>
+<% if current_user.charity.nil? %>
+  <div class="container">
 
 
-<!-- <h2>My Pending missions</h2>
- -->
+    <div class="mx-auto">
+      <div class="">
+        <!-- summary box for:
+          - User welcome message
+          - User email
+          - User badge level
+         -->
+      </div>
 
-<%#= link_to 'accept booking', accept_booking_path(booking: booking), class: "btn btn-primary %>
+      <div class="">
+        <!-- summary box for:
+          - x days left before next mission
+          - mission completed
+         -->
+      </div>
+      <h1>Missions</h1>
+        <h2>My Pending missions</h2>
+        <%= render "shared/dashboard-pending-mission", mission: @pending_volunteer_bookings %>
+      </div>
 
+      <!-- <div class="mx-auto">
+        <h2>My Pending missions</h2>
+        <%#= render "shared/dashboard-upcoming-mission", mission: @accepted_volunteer_bookings %>
+      </div> -->
+
+      <!-- <div class="mx-auto">
+        <h2>My Pending missions</h2>
+        <%#= render "dashboard-completed-mission", mission: @mission %>
+      </div> -->
+  </div>
+<% else %>
+  <!-- <h2>My Pending missions</h2>
+   -->
+
+  <%#= link_to 'accept booking', accept_booking_path(booking: booking), class: "btn btn-primary %>
+<% end %>
