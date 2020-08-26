@@ -10,15 +10,27 @@ class MissionsController < ApplicationController
 
   def index
     @missions = Mission.all
-  #    @missions = Mission.geocoded
+     @missions = Mission.geocoded
 
-  #   @markers = @missions.map do |mission|
-  #     {
-  #       lat: flat.latitude,
-  #       lng: flat.longitude
-  #     }
-  #   end
-  # end
+    @markers = @missions.map do |mission|
+      {
+        lat: mission.latitude,
+        lng: mission.longitude
+      }
+    end
+
+# if params[:query].nil? || (params[:query] == "")
+#       @missions = Mission.all
+#     else
+#       params[:query]
+#        @missions = @missions.where(' ILIKE ?', params[:query])
+#     end
+    if params[:query].nil? || (params[:query] == "")
+      @missions = Mission.all
+    else
+      params[:query]
+      @missions = @missions.near(params[:query], 20)
+    end
   end
 
   def create

@@ -1,2 +1,15 @@
 <h1>iGive</h1>
 <%= link_to 'See all missions', missions_path, class: "btn btn-sm btn-primary"%>
+
+<div class="container">
+  <div class="container-search-bar my-5">
+    <form action="/missions" method="get">
+      <div class="product-search">
+          <div class="search-element">
+            <label class="search-label">Search Location</label>
+            <input class="search-input" type="text" autocomplete="on" placeholder="E.g. South London..." name="query">
+          </div>
+          <input type="submit" class="search-button">
+      </div>
+    </form>
+  </div>
