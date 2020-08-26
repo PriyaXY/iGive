@@ -1,4 +1,37 @@
 
+<div class="container">
+  <div class="mx-auto">
+    <div class="">
+      <!-- summary box for:
+        - User welcome message
+        - User email
+        - User badge level
+       -->
+    </div>
+
+    <div class="">
+      <!-- summary box for:
+        - x days left before next mission
+        - mission completed
+       -->
+    </div>
+    <h1>Missions</h1>
+      <h2>My Pending missions</h2>
+      <%= render "dashboard-pending-mission", mission: @mission %>
+    </div>
+
+    <div class="mx-auto">
+      <h2>My Pending missions</h2>
+      <%= render "dashboard-upcoming-mission", mission: @mission %>
+    </div>
+
+    <div class="mx-auto">
+      <h2>My Pending missions</h2>
+      <%= render "dashboard-completed-mission", mission: @mission %>
+    </div>
+</div>
+
+
 <h2>My Pending missions</h2>
 
 
@@ -13,18 +46,3 @@
 </div>
 <%# end %> -->
 
-<!--
-
-case 1. dashboard for user with charity
-- can edit charity information
-- can see accepted / rejected missions
-- can see pending missions
-
-
-case 2. dashboard for user without charity
--
--
--
--
-
- -->

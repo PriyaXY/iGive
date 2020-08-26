@@ -1,7 +1,11 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "iGive-logo.png"%> iGive
-    <% end %>
+  <div style="display:flex;">
+    <div style="flex:1; margin-right: 15px;"><%= image_tag "iGive-logo.png" %></div>
+    <div style="flex:1; font-size:36px;">iGive
+      <span style="font-size:12px; display:block; line-height: 0em;">Be a local hero</span></div>
+  </div>
+  <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
