@@ -5,19 +5,19 @@ class BookingsController < ApplicationController
     @mission.booking = @mission
     @booking.user = current_user
     if @booking.save
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       render :new
     end
   end
 
-  # def booking_status
-  #   booking = Booking.find(params[:booking])
-  #   booking.status = "accepted"
-  #   if booking.save
-  #     redirect_to dashboard_path
-  #   end
-  # end
+  def accept_booking
+    booking = Booking.find(params[:booking])
+    booking.status = "accepted"
+    if booking.save
+      redirect_to dashboard_path
+    end
+  end
 
   private
 
