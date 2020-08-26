@@ -1,11 +1,22 @@
-<%= simple_form_for([ @charity, @mission ]) do |f| %>
-<h1>please enter your mission information below</h1>
-  <%= f.input :start_date%>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :address %>
-  <%= f.input :number_of_volunteers %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <h1>please enter your mission information below</h1>
+      <%= simple_form_for([ @charity, @mission ]) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :start_date%>
+          <%= f.input :title %>
+          <%= f.input :description %>
+          <%= f.input :address %>
+          <%= f.input :number_of_volunteers %>
+          <%= f.input :photos, input_html: {multiple: true}, as: :file, :label => "Upload boat photos",class: "btn btn-primary" %>
+        </div>
+        <div class="form-actions">
+          <%= f.submit "Submit", class: "btn btn-primary" %>
+        </div>
+      <% end %>
 
-<%= link_to 'home', root_path, class: "btn btn-primary"%>
+      <%= link_to 'home', root_path, class: "btn btn-primary"%>
+    </div>
+  </div>
+</div>
