@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @missions_completed = Mission.select { |mission| mission.mission_completed? }
     @charity_missions = current_user.missions
     volunteer_bookings = current_user.bookings
     @pending_volunteer_bookings = []
@@ -20,6 +21,7 @@ class PagesController < ApplicationController
   end
 
   private
+
 
   def set_charity_bookings
     missions = current_user.charity.missions

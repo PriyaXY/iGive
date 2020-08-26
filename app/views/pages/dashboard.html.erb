@@ -1,5 +1,7 @@
 
 <div class="container">
+
+
   <div class="mx-auto">
     <div class="">
       <!-- summary box for:
@@ -17,32 +19,23 @@
     </div>
     <h1>Missions</h1>
       <h2>My Pending missions</h2>
-      <%= render "dashboard-pending-mission", mission: @mission %>
+      <%= render "shared/dashboard-pending-mission", mission: @pending_volunteer_bookings %>
     </div>
 
-    <div class="mx-auto">
+    <!-- <div class="mx-auto">
       <h2>My Pending missions</h2>
-      <%= render "dashboard-upcoming-mission", mission: @mission %>
-    </div>
+      <%#= render "shared/dashboard-upcoming-mission", mission: @accepted_volunteer_bookings %>
+    </div> -->
 
-    <div class="mx-auto">
+    <!-- <div class="mx-auto">
       <h2>My Pending missions</h2>
-      <%= render "dashboard-completed-mission", mission: @mission %>
-    </div>
+      <%#= render "dashboard-completed-mission", mission: @mission %>
+    </div> -->
 </div>
 
 
-<h2>My Pending missions</h2>
-
+<!-- <h2>My Pending missions</h2>
+ -->
 
 <%#= link_to 'accept booking', accept_booking_path(booking: booking), class: "btn btn-primary %>
-
-<!-- <h4><%#= mission.name.capitalize %></h4>
-<p>Starting on <%#= mission.start_date.strftime("%d/%m/%Y") %></p>
-    <%#= link_to 'Edit your mission', edit_mission_path(mission) %>
-    <%#= link_to "Delete mission", mission_path(mission),
-        method: :delete,
-        data: {confirm: "are you sure"} %>
-</div>
-<%# end %> -->
 
