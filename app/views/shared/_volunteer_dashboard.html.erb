@@ -34,7 +34,11 @@
           <h2>My Pending Missions</h2>
           <% @pending_volunteer_missions.each do |booking| %>
             <div>
-              <%= booking.mission.title %>
+              <ul>
+                <li><%= link_to "#{booking.mission.title}", mission_path(booking.mission) %></li>
+                <li><%= booking.mission.charity.name %></li>
+                <li><%= (Date.today..booking.mission.start_date).count %> days left!</li>
+              </ul>
             </div>
           <% end %>
         </div>
@@ -44,7 +48,11 @@
         <h2>My Upcoming missions</h2>
         <% @accepted_volunteer_missions.each do |booking| %>
             <div>
-              <%= booking.mission.title %>
+              <ul>
+                <li><%= link_to "#{booking.mission.title}", mission_path(booking.mission) %></li>
+                <li><%= booking.mission.charity.name %></li>
+                <li><%= (Date.today..booking.mission.start_date).count %> days left!</li>
+              </ul>
             </div>
           <% end %>
       </div>
@@ -52,7 +60,10 @@
         <h2>My Completed missions</h2>
         <% @volunteer_completed_missions.each do |booking|%>
           <div>
-            <%= booking.mission.title %>
+            <ul>
+              <li><%= booking.mission.title %></li>
+              <li><%= booking.mission.charity.name %></li>
+          </ul>
           </div>
         <% end %>
       </div>
