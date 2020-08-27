@@ -11,6 +11,7 @@ const initMapbox = () => {
     });
   }
 
+
   if (mapElement) {
     // [ ... ]
     const markers = JSON.parse(mapElement.dataset.markers);
@@ -30,7 +31,9 @@ if (mapElement) {
   // [ ... ]
   fitMapToMarkers(map, markers);
 }
+
   }
+
 };
 
 export { initMapbox };
