@@ -1,6 +1,10 @@
 <div class="container">
-  <% @missions.each do |mission| %>
+  <h1 class="my-4">Help needed! See all Missions </h1>
+  <% @missions.order(start_date: :asc).each do |mission| %>
     <div class="card mb-3 p-2">
+      <div>
+          <%="Start date: #{mission.start_date.strftime('%d/%m/%Y')}"%>
+      </div>
       <div>
         <%=link_to "Mission: #{mission.title}", mission_path(mission) %>
       </div>
