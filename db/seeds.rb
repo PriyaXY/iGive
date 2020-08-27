@@ -37,7 +37,7 @@ Serving customers with a smile is so important. You’ll be using the till (don'
 It’s really important that our window and shop displays look appealing so people keep visiting our shops. So you'll be wielding a duster and vacuum as well as your imagination to make the shop look its best.
 It would be ideal if you could volunteer one shift a week, which is about four hours but we're also happy to have more flexible times. No special skills are needed as we’ll show you what to do and we provide all the training you’ll need. But if you have any experience or particular interest tell us, it may come in useful. It’s really easy to get your volunteering started.
 If you're over 18 years old, just click on ‘Apply’ and get filling in your details!",
-address: "37 Crescent Rd, Windermere LA23 1BL" , number_of_volunteers: 3, start_date: DateTime.new(2020,5,13))
+address: "37 Crescent Rd, Windermere LA23 1BL" , number_of_volunteers: 3, start_date: DateTime.new(2020,10,13))
 windermere.save!
 
 trussell = Mission.new(charity: charity1, title:"Time for Trussell (Home Based)" , description: "Volunteer your time from Home, as a Time for Trussell volunteer. This pandemic is an unprecedented challenge presenting huge additional pressure on already overstretched resources. Whether you have 5 minutes or 5 hours, you can make a difference.",
