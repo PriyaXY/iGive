@@ -7,12 +7,13 @@ class MissionsController < ApplicationController
   def show
     @mission = Mission.find(params[:id])
 
-    @markers =
+    @markers = [
       {
         lat: @mission.latitude,
+        image_url: helpers.asset_url('iGive-logo.png'),
         lng: @mission.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { mission: @mission })
-      }
+      }]
     end
 
 

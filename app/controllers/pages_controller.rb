@@ -9,9 +9,10 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @pending_volunteer_missions = current_user.bookings.where(status: "pending")
-    @accepted_volunteer_missions = current_user.bookings.where(status: "accepted")
-    #@volunteer_completed_missions = @accepted_volunteer_bookings.where('start_date < ?', Date.today)
+    @pending_volunteer_missions = current_user.bookings.where(status: "pending").includes(:mission).where('missions.start_date > ?', Date.today).references(:mission)
+    accepted_volunteer_bookings = current_user.bookings.where(status: "accepted")
+    @accepted_volunteer_missions = accepted_volunteer_bookings.includes(:mission).where('missions.start_date > ?', Date.today).references(:mission)
+    @volunteer_completed_missions = current_user.bookings.includes(:mission).where('missions.start_date < ?', Date.today).references(:mission)
     if current_user.charity
       @pending_charity_applications = current_user.charity_bookings.where(status: "pending")
       @accepted_charity_applications = current_user.charity_bookings.where(status: "accepted")

@@ -1,6 +1,3 @@
-<h2> <%= "Welcome #{current_user.first_name}" %> </h2>
-<h3><%="#{current_user.email}"%></h3>
-
 <%#= if  @volunteer_completed_missions.count == (1..5) %>
 <%#= <image_tag(".png")> %>
 <%#= elsif @volunteer_completed_missions.count == (5..10) %>
@@ -11,10 +8,16 @@
 <%#= <image_tag(".png")> %>
 <%#= else @volunteer_completed_missions.count == (0) %>
 <%#= end %>
- <div class="container">
 
+ <div class="container">
+    <h1 class="my-4">Your dashboard</h1>
+    <h2> <%= "Welcome #{current_user.first_name}" %> </h2>
+    <h3><%="#{current_user.email}"%></h3>
 
     <div class="mx-auto">
+
+    <h2> <%= "Welcome #{current_user.first_name}" %> </h2>
+    <h3><%="#{current_user.email}"%></h3>
       <div class="">
         <!-- summary box for:
           - User welcome message
@@ -34,7 +37,11 @@
           <h2>My Pending Missions</h2>
           <% @pending_volunteer_missions.each do |booking| %>
             <div>
-              <%= booking.mission.title %>
+              <ul>
+                <li><%= link_to "#{booking.mission.title}", mission_path(booking.mission) %></li>
+                <li><%= booking.mission.charity.name %></li>
+                <li><%= (Date.today..booking.mission.start_date).count %> days left!</li>
+              </ul>
             </div>
           <% end %>
         </div>
@@ -44,13 +51,24 @@
         <h2>My Upcoming missions</h2>
         <% @accepted_volunteer_missions.each do |booking| %>
             <div>
-              <%= booking.mission.title %>
+              <ul>
+                <li><%= link_to "#{booking.mission.title}", mission_path(booking.mission) %></li>
+                <li><%= booking.mission.charity.name %></li>
+                <li><%= (Date.today..booking.mission.start_date).count %> days left!</li>
+              </ul>
             </div>
           <% end %>
       </div>
-
       <div class="mx-auto">
         <h2>My Completed missions</h2>
+        <% @volunteer_completed_missions.each do |booking|%>
+          <div>
+            <ul>
+              <li><%= booking.mission.title %></li>
+              <li><%= booking.mission.charity.name %></li>
+          </ul>
+          </div>
+        <% end %>
       </div>
   </div>
 
