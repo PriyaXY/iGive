@@ -48,9 +48,13 @@
             </div>
           <% end %>
       </div>
-
       <div class="mx-auto">
         <h2>My Completed missions</h2>
+        <% @volunteer_completed_missions.each do |booking|%>
+          <div>
+            <%= booking.mission.title %>
+          </div>
+        <% end %>
       </div>
   </div>
 
