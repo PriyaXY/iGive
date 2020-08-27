@@ -6,7 +6,15 @@ class MissionsController < ApplicationController
 
   def show
     @mission = Mission.find(params[:id])
-  end
+
+    @markers =
+      {
+        lat: @mission.latitude,
+        lng: @mission.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { mission: @mission })
+      }
+    end
+
 
   def index
     @missions = Mission.all
@@ -15,10 +23,11 @@ class MissionsController < ApplicationController
     @markers = @missions.map do |mission|
       {
         lat: mission.latitude,
-        lng: mission.longitude
-        #infoWindow: render_to_string(partial: "info_window", locals: { mission: mission })
+        lng: mission.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { mission: mission })
       }
     end
+
 
 # if params[:query].nil? || (params[:query] == "")
 #       @missions = Mission.all
