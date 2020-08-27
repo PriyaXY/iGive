@@ -40,6 +40,7 @@ If you're over 18 years old, just click on ‘Apply’ and get filling in your d
 address: "37 Crescent Rd, Windermere LA23 1BL" , number_of_volunteers: 3, start_date: DateTime.new(2020,10,13))
 windermere.save!
 
+
 trussell = Mission.new(charity: charity1, title:"Time for Trussell (Home Based)" , description: "Volunteer your time from Home, as a Time for Trussell volunteer. This pandemic is an unprecedented challenge presenting huge additional pressure on already overstretched resources. Whether you have 5 minutes or 5 hours, you can make a difference.",
 address: "37 Crescent Rd, Windermere LA23 1BL" , number_of_volunteers: 6, start_date: DateTime.new(2020,3,02))
 trussell.save!
