@@ -21,11 +21,11 @@ puts 'Finished!'
 
 
 puts 'Creating Charities...'
-crisis = Charity.new(user: user_charity1 , name: "Crisis", phone_number: "0300 636 1967", description:"We are the national charity for homeless people. We help people directly out of homelessness and campaign for the changes needed to solve it altogether. Find out more about ending homelessness" , website: "www.crisis.org.uk")
-crisis.save!
+charity1 = Charity.new(user: user_charity1 , name: "Crisis", phone_number: "0300 636 1967", description:"We are the national charity for homeless people. We help people directly out of homelessness and campaign for the changes needed to solve it altogether. Find out more about ending homelessness" , website: "www.crisis.org.uk")
+charity1.save!
 
-emmaus  = Charity.new(user: user_charity2, name: "Emmaus", phone_number: "0300 303 7555", description:"We supports more than 800 formerly homeless people. We provide them with support, a home for as long as they need it and meaningful work and training in our social enterprises." , website: "emmaus.org.uk")
-emmaus.save!
+charity2  = Charity.new(user: user_charity2, name: "Emmaus", phone_number: "0300 303 7555", description:"We supports more than 800 formerly homeless people. We provide them with support, a home for as long as they need it and meaningful work and training in our social enterprises." , website: "emmaus.org.uk")
+charity2.save!
 
 puts 'Finished!'
 
