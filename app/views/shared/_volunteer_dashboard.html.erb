@@ -1,0 +1,57 @@
+<h2> <%= "Welcome #{current_user.first_name}" %> </h2>
+<h3><%="#{current_user.email}"%></h3>
+
+<%#= if  @volunteer_completed_missions.count == (1..5) %>
+<%#= <image_tag(".png")> %>
+<%#= elsif @volunteer_completed_missions.count == (5..10) %>
+<%#= <image_tag(".png")> %>
+<%#= elsif @volunteer_completed_missions.count == (10..20) %>
+<%#= <image_tag(".png")> %>
+<%#= elsif @volunteer_completed_missions.count == (20..30) %>
+<%#= <image_tag(".png")> %>
+<%#= else @volunteer_completed_missions.count == (0) %>
+<%#= end %>
+ <div class="container">
+
+
+    <div class="mx-auto">
+      <div class="">
+        <!-- summary box for:
+          - User welcome message
+          - User email
+          - User badge level
+         -->
+      </div>
+
+      <div class="">
+        <!-- summary box for:
+          - x days left before next mission
+          - mission completed
+         -->
+      </div>
+      <h1>Missions</h1>
+        <div>
+          <h2>My Pending Missions</h2>
+          <% @pending_volunteer_missions.each do |booking| %>
+            <div>
+              <%= booking.mission.title %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="mx-auto">
+        <h2>My Upcoming missions</h2>
+        <% @accepted_volunteer_missions.each do |booking| %>
+            <div>
+              <%= booking.mission.title %>
+            </div>
+          <% end %>
+      </div>
+
+      <div class="mx-auto">
+        <h2>My Completed missions</h2>
+      </div>
+  </div>
+
+

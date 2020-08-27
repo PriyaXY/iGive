@@ -6,26 +6,28 @@ class MissionsController < ApplicationController
 
   def show
     @mission = Mission.find(params[:id])
-  end
+
+    @markers =
+      {
+        lat: @mission.latitude,
+        lng: @mission.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { mission: @mission })
+      }
+    end
+
 
   def index
     @missions = Mission.all
-     @missions = Mission.geocoded
+    @missions = Mission.geocoded
 
     @markers = @missions.map do |mission|
       {
         lat: mission.latitude,
-        lng: mission.longitude
+        lng: mission.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { mission: mission })
       }
     end
 
-# if params[:query].nil? || (params[:query] == "")
-#       @missions = Mission.all
-#     else
-#       params[:query]
-#        @missions = @missions.where(' ILIKE ?', params[:query])
-#     end
     if params[:query].nil? || (params[:query] == "")
       @missions = Mission.all
     else
