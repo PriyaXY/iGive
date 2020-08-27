@@ -1,6 +1,3 @@
-<h2> <%= "Welcome #{current_user.first_name}" %> </h2>
-<h3><%="#{current_user.email}"%></h3>
-
 <%#= if  @volunteer_completed_missions.count == (1..5) %>
 <%#= <image_tag(".png")> %>
 <%#= elsif @volunteer_completed_missions.count == (5..10) %>
@@ -12,8 +9,9 @@
 <%#= else @volunteer_completed_missions.count == (0) %>
 <%#= end %>
  <div class="container">
-
-
+    <h1 class="my-4">Your dashboard</h1>
+    <h2> <%= "Welcome #{current_user.first_name}" %> </h2>
+    <h3><%="#{current_user.email}"%></h3>
     <div class="mx-auto">
       <div class="">
         <!-- summary box for:
