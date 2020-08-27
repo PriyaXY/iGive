@@ -15,7 +15,7 @@
               </tr>
               <tr>
                 <td>Start Date:</td>
-                <td><span class="text-secondary"><%= @mission.start_date %></span></td>
+                <td><span class="text-secondary"><%= @mission.start_date.strftime('%d/%m/%Y') %></span></td>
               </tr>
               <tr>
                 <td>Description:</td>
