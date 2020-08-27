@@ -1,29 +1,31 @@
-<div>
-  <h2> <%= "Welcome #{current_user.charity.name}" %> </h2>
-  <%#= link_to 'accept booking', accept_booking_path(booking: booking), class: "btn btn-primary %>
-  <h1>Missions</h1>
+ <div class="container">
+    <div class="mx-auto">
+      <h2> <%= "Welcome #{current_user.charity.name}" %> </h2>
+      <%#= link_to 'accept booking', accept_booking_path(booking: booking), class: "btn btn-primary %>
+      <h1>Missions</h1>
 
-  <div class="mx-auto">
-    <h2>My Posted Missions</h2>
-    <% @current_user.charity.missions.each do |mission| %>
-      <div>
-        <%= mission.title %>
-        <%= mission.start_date.strftime('%d/%m/%Y') %>
+      <div class="mx-auto">
+        <h2>My Posted Missions</h2>
+        <% @current_user.charity.missions.each do |mission| %>
+          <div>
+            <%= mission.title %>
+            <%= mission.start_date.strftime('%d/%m/%Y') %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
 
-  <div>
-    <h2>My Pending Mission Requests</h2>
-    <% @pending_charity_applications.each do |booking| %>
-    <div>
-      <%= booking.mission.title %>
-      <%= link_to 'accept booking', accept_booking_path(booking: booking), class: "btn btn-primary" %>
-    </div>
-    <% end %>
-  </div>
+      <div>
+        <h2>My Pending Mission Requests</h2>
+        <% @pending_charity_applications.each do |booking| %>
+        <div>
+          <%= booking.mission.title %>
+          <%= link_to 'accept booking', accept_booking_path(booking: booking), class: "btn btn-primary" %>
+        </div>
+        <% end %>
+      </div>
 
-  <div class="mx-auto">
-    <h2>My Completed missions</h2>
+      <div class="mx-auto">
+        <h2>My Completed missions</h2>
+      </div>
   </div>
 </div>
