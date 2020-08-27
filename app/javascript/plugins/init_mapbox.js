@@ -10,10 +10,6 @@ const initMapbox = () => {
       style: 'mapbox://styles/mapbox/streets-v10'
     });
   }
-};
-
-export { initMapbox };
-
 
 if (mapElement) {
   // [ ... ]
@@ -24,3 +20,8 @@ if (mapElement) {
       .addTo(map);
   });
 }
+};
+
+export { initMapbox };
+
+
