@@ -31,7 +31,7 @@ puts 'Finished!'
 
 puts 'Creating missions...'
 
-windermere = Mission.new(charity: crisis, title:"Windermere Retail Volunteer" , description: "Our shops help raise lots of money for children living in the UK and in 120 countries worldwide. It’s always lovely chatting to our customers about the fabulous items we sell and telling them about the fantastic work that Save the Children does. You’ll get the chance to meet new people and make friends plus you’ll be part of an amazing team of volunteers. Your donation of time, creativity and kindness will help us change the world - via fabulous fashion and sustainable shopping!
+windermere = Mission.new(charity: charity1, title:"Windermere Retail Volunteer" , description: "Our shops help raise lots of money for children living in the UK and in 120 countries worldwide. It’s always lovely chatting to our customers about the fabulous items we sell and telling them about the fantastic work that Save the Children does. You’ll get the chance to meet new people and make friends plus you’ll be part of an amazing team of volunteers. Your donation of time, creativity and kindness will help us change the world - via fabulous fashion and sustainable shopping!
 There’s so much for you to get stuck in to when you’re volunteering in our shops. We get lots of donations and it's always exciting when one of our volunteers spots a real gem. You'll be taking in, sorting, steaming and pricing donations, rolling up your sleeves in the backroom as well as being on the shop floor.
 Serving customers with a smile is so important. You’ll be using the till (don't worry, we'll show you how) and handling money. And when people come in to donate items you'll also be completing the Gift Aid forms that let their donations help us even more.
 It’s really important that our window and shop displays look appealing so people keep visiting our shops. So you'll be wielding a duster and vacuum as well as your imagination to make the shop look its best.
@@ -40,7 +40,7 @@ If you're over 18 years old, just click on ‘Apply’ and get filling in your d
 address: "37 Crescent Rd, Windermere LA23 1BL" , number_of_volunteers: 3, start_date: DateTime.new(2020,5,13))
 windermere.save!
 
-trussell = Mission.new(charity: crisis, title:"Time for Trussell (Home Based)" , description: "Volunteer your time from Home, as a Time for Trussell volunteer. This pandemic is an unprecedented challenge presenting huge additional pressure on already overstretched resources. Whether you have 5 minutes or 5 hours, you can make a difference.",
+trussell = Mission.new(charity: charity2, title:"Time for Trussell (Home Based)" , description: "Volunteer your time from Home, as a Time for Trussell volunteer. This pandemic is an unprecedented challenge presenting huge additional pressure on already overstretched resources. Whether you have 5 minutes or 5 hours, you can make a difference.",
 address: "37 Crescent Rd, Windermere LA23 1BL" , number_of_volunteers: 6, start_date: DateTime.new(2020,3,02))
 trussell.save!
 
