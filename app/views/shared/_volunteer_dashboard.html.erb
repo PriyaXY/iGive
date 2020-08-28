@@ -1,13 +1,16 @@
-<%#= if  @volunteer_completed_missions.count == (1..5) %>
-<%#= <image_tag(".png")> %>
-<%#= elsif @volunteer_completed_missions.count == (5..10) %>
-<%#= <image_tag(".png")> %>
-<%#= elsif @volunteer_completed_missions.count == (10..20) %>
-<%#= <image_tag(".png")> %>
-<%#= elsif @volunteer_completed_missions.count == (20..30) %>
-<%#= <image_tag(".png")> %>
-<%#= else @volunteer_completed_missions.count == (0) %>
-<%#= end %>
+<div>
+<% if  @volunteer_completed_missions.count <= 5 %>
+<%= image_tag "heart.png", alt: "alttext", class: "sheild"  %>
+<%= "You are a valued contributor"  %>
+<% elsif @volunteer_completed_missions.count <= 10 %>
+<%= image_tag "sheild-first-time-user.png", alt: "alttext"%>
+<% elsif @volunteer_completed_missions.count <=  20 %>
+ <%= image_tag "shield-average.png", alt: "alttext" %>
+<% elsif @volunteer_completed_missions.count >  20 %>
+<%= image_tag "shield-super-user.png", alt: "alttext" %>
+<% else %>
+<% end %>
+</div>
 
 <div class="container">
     <h1 class="my-4">Your dashboard</h1>
