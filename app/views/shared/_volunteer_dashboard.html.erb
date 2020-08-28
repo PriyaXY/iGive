@@ -9,11 +9,8 @@
 <%#= else @volunteer_completed_missions.count == (0) %>
 <%#= end %>
 
- <div class="container">
+<div class="container">
     <h1 class="my-4">Your dashboard</h1>
-    <h2> <%= "Welcome #{current_user.first_name}" %> </h2>
-    <h3><%="#{current_user.email}"%></h3>
-
     <div class="mx-auto">
 
     <h2> <%= "Welcome #{current_user.first_name}" %> </h2>
@@ -32,19 +29,20 @@
           - mission completed
          -->
       </div>
+
+      <!-- mission section starts here -->
       <h1>Missions</h1>
-        <div>
-          <h2>My Pending Missions</h2>
-          <% @pending_volunteer_missions.each do |booking| %>
-            <div>
-              <ul>
-                <li><%= link_to "#{booking.mission.title}", mission_path(booking.mission) %></li>
-                <li><%= booking.mission.charity.name %></li>
-                <li><%= (Date.today..booking.mission.start_date).count %> days left!</li>
-              </ul>
-            </div>
-          <% end %>
-        </div>
+
+
+      <div class="mx-auto">
+      <h2>My Pending Missions</h2>
+      <% @pending_volunteer_missions.each do |booking| %>
+          <ul>
+            <li><%= link_to "#{booking.mission.title}", mission_path(booking.mission) %></li>
+            <li><%= booking.mission.charity.name %></li>
+            <li><%= (Date.today..booking.mission.start_date).count %> days left!</li>
+          </ul>
+      <% end %>
       </div>
 
       <div class="mx-auto">
@@ -66,10 +64,9 @@
             <ul>
               <li><%= booking.mission.title %></li>
               <li><%= booking.mission.charity.name %></li>
-          </ul>
+            </ul>
           </div>
         <% end %>
       </div>
   </div>
-
 

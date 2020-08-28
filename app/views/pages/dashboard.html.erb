@@ -2,7 +2,7 @@
 <div class="container">
 
 <% if current_user.charity.nil? %>
-   <%= render "shared/volunteer_dashboard"%>
+   <%= render "shared/volunteer_dashboard" %>
 <% else %>
   <%= render "shared/charity_dashboard"%>
 <% end %>
