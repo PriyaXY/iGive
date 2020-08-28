@@ -1,10 +1,19 @@
 <div class="container">
-      <div class="mx-auto">
-        <!-- summary box for:
-          - User welcome message
-          - User email
-          - User badge level
-         -->
+    <div class="mx-auto">
+      <h1><%= "Welcome back, #{current_user.first_name}!" %></h1>
+      <h3><%= "#{current_user.email}" %></h3>
+      
+      <% if  @volunteer_completed_missions.count <= 5 %>
+        <%= image_tag "heart.png", alt: "alttext", class: "sheild"  %>
+         <%= "You are a valued contributor"  %>
+        <% elsif @volunteer_completed_missions.count <= 10 %>
+        <%= image_tag "sheild-first-time-user.png", alt: "alttext"%>
+        <% elsif @volunteer_completed_missions.count <=  20 %>
+         <%= image_tag "shield-average.png", alt: "alttext" %>
+        <% elsif @volunteer_completed_missions.count >  20 %>
+        <%= image_tag "shield-super-user.png", alt: "alttext" %>
+        <% else %>
+      <% end %>
       </div>
 
       <div class="mx-auto">
