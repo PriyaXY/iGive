@@ -6,6 +6,7 @@ class MissionsController < ApplicationController
 
   def show
     @mission = Mission.find(params[:id])
+    @charity = @mission.charity
 
     @markers = [
       {
@@ -14,7 +15,7 @@ class MissionsController < ApplicationController
         lng: @mission.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { mission: @mission })
       }]
-    end
+  end
 
 
   def index

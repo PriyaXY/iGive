@@ -56,16 +56,45 @@
                 <td><span class="text-secondary"><%= @mission.number_of_volunteers %></span></td>
               </tr>
           </table>
+        </ul>
        </div>
       </div>
      </div>
    </div>
 
 <%= simple_form_for [@mission, Booking.new] do |f| %>
-<%= f.button :submit %>
+<%= f.button :submit, 'Apply Now', class:"btn btn-sm btn-primary" %>
 <% end %>
 
 <%= link_to 'Back to missions', missions_path, class: "btn btn-sm btn-primary"%>
+
+ <div class="card">
+    <div class="card-header">
+      <a class="card-link" data-toggle="collapse" href="#collapseOne">
+        More info. about <%= @charity.name%>
+      </a>
+    </div>
+    <div id="collapseOne" class="collapse">
+      <div class="card-body">
+        <ul class="list-group">
+          <table class="table table-borderless table-sm">
+              <tr>
+                <td>Description:</td>
+                <td><span class="text-secondary"><%= @charity.description %></span></td>
+              </tr>
+              <tr>
+                <td>Phone Number:</td>
+                <td><span class="text-secondary"><%= @charity.phone_number%></span></td>
+              </tr>
+              <tr>
+                <td>Website:</td>
+                <td><span class="text-secondary"><%= @charity.website %></span></td>
+              </tr>
+          </table>
+        </ul>
+      </div>
+    </div>
+  </div>
 
 <p><strong>Location</strong></p>
 
@@ -74,6 +103,7 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-<!-- End of container -->
+
+  <!-- End of container -->
 
 </div>
