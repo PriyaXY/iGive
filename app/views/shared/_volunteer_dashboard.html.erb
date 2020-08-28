@@ -1,74 +1,91 @@
-<div>
-<% if  @volunteer_completed_missions.count <= 5 %>
-<%= image_tag "heart.png", alt: "alttext", class: "sheild"  %>
-<%= "You are a valued contributor"  %>
-<% elsif @volunteer_completed_missions.count <= 10 %>
-<%= image_tag "sheild-first-time-user.png", alt: "alttext"%>
-<% elsif @volunteer_completed_missions.count <=  20 %>
- <%= image_tag "shield-average.png", alt: "alttext" %>
-<% elsif @volunteer_completed_missions.count >  20 %>
-<%= image_tag "shield-super-user.png", alt: "alttext" %>
-<% else %>
-<% end %>
-</div>
-
-
-
 <div class="container">
-    <h1><%= "Welcome back, #{current_user.first_name}!" %></h1>
-    <h3><%= "#{current_user.email}" %></h3>
     <div class="mx-auto">
-        <!-- summary box for:
-          - User welcome message
-          - User email
-          - User badge level
-         -->
+      <h1><%= "Welcome back, #{current_user.first_name}!" %></h1>
+      <h3><%= "#{current_user.email}" %></h3>
+      
+      <% if  @volunteer_completed_missions.count <= 5 %>
+        <%= image_tag "heart.png", alt: "alttext", class: "sheild"  %>
+         <%= "You are a valued contributor"  %>
+        <% elsif @volunteer_completed_missions.count <= 10 %>
+        <%= image_tag "sheild-first-time-user.png", alt: "alttext"%>
+        <% elsif @volunteer_completed_missions.count <=  20 %>
+         <%= image_tag "shield-average.png", alt: "alttext" %>
+        <% elsif @volunteer_completed_missions.count >  20 %>
+        <%= image_tag "shield-super-user.png", alt: "alttext" %>
+        <% else %>
+      <% end %>
       </div>
 
-      <div class="">
+      <div class="mx-auto">
         <!-- summary box for:
           - x days left before next mission
           - mission completed
          -->
       </div>
+      <!-- view pending missions -->
+      <h3 class="mt-5 mb-3">My Pending Missions</h3>
 
-      <!-- mission section starts here -->
-      <h1>Missions</h1>
-
-
-      <div class="mx-auto">
-      <h2>My Pending Missions</h2>
-      <% @pending_volunteer_missions.each do |booking| %>
-          <ul>
-            <li><%= link_to "#{booking.mission.title}", mission_path(booking.mission) %></li>
-            <li><%= booking.mission.charity.name %></li>
-            <li><%= (Date.today..booking.mission.start_date).count %> days left!</li>
-          </ul>
-      <% end %>
-      </div>
-
-      <div class="mx-auto">
-        <h2>My Upcoming missions</h2>
-        <% @accepted_volunteer_missions.each do |booking| %>
-            <div>
-              <ul>
-                <li><%= link_to "#{booking.mission.title}", mission_path(booking.mission) %></li>
-                <li><%= booking.mission.charity.name %></li>
-                <li><%= (Date.today..booking.mission.start_date).count %> days left!</li>
-              </ul>
+      <div class="list-group">
+        <% if @pending_volunteer_missions.any? %>
+        <% @pending_volunteer_missions.each do |booking| %>
+         <div class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <div class="warning"><%= (Date.today..booking.mission.start_date).count %> days left!</div>
+                <h5 class="mt-2 mb-2 mission-title text-left">
+                  <%= link_to "#{booking.mission.title}", mission_path(booking.mission) %>
+                </h5>
+                <small><%= booking.mission.charity.name %></small>
             </div>
-          <% end %>
-      </div>
-      <div class="mx-auto">
-        <h2>My Completed missions</h2>
-        <% @volunteer_completed_missions.each do |booking|%>
-          <div>
-            <ul>
-              <li><%= booking.mission.title %></li>
-              <li><%= booking.mission.charity.name %></li>
-            </ul>
+          </div>
+        <% end %>
+        <% else %>
+          <div class="list-group-item list-group-item-action flex-column align-items-start">
+            <p class="text-left no-information">No information available</p>
           </div>
         <% end %>
       </div>
-  </div>
+
+      <h3 class="mt-5 mb-3">My Upcoming missions</h3>
+
+      <!-- Upcoming missions -->
+      <div class="list-group">
+        <% if @accepted_volunteer_missions.any? %>
+        <% @accepted_volunteer_missions.each do |booking| %>
+        <div class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <div class="warning"><%= (Date.today..booking.mission.start_date).count %> days left!</div>
+               <h5 class="mt-2 mb-2 mission-title"><%= link_to "#{booking.mission.title}", mission_path(booking.mission) %></h5>
+               <small><%= booking.mission.charity.name %></small>
+            </div>
+          </div>
+        <% end %>
+        <% else %>
+          <div class="list-group-item list-group-item-action flex-column align-items-start">
+            <p class="text-left no-information">No information available</p>
+          </div>
+        <% end %>
+      </div>
+
+      <h3 class="mt-5 mb-3">My Completed missions</h3>
+
+       <!-- completed missions -->
+       <div class="list-group">
+          <% if @volunteer_completed_missions.any? %>
+          <% @volunteer_completed_missions.each do |booking|%>
+          <div class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mt-2 mb-2 mission-title"><%= booking.mission.title %></h5>
+              <small><%= booking.mission.charity.name %></small>
+            </div>
+          </div>
+        <% end %>
+        <% else %>
+          <div class="list-group-item list-group-item-action flex-column align-items-start">
+            <p class="text-left no-information">No information available</p>
+          </div>
+        <% end %>
+      </div>
+
+<!-- page container closing div. Dont delete -->
+</div>
 

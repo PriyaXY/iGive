@@ -17,7 +17,6 @@ class MissionsController < ApplicationController
       }]
   end
 
-
   def index
     @missions = Mission.all
     @missions = Mission.geocoded

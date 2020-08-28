@@ -1,11 +1,11 @@
 <div class="container">
 
   <h1 class="my-4">Edit your Charity </h1>
-    <%= simple_form_for [ @charity ] do |f| %>
-     <div class="form-row">
-    <div class="form-group col-md-6">
-    <%= f.input :name %>
-  </div>
+  <%= simple_form_for [ @charity ] do |f| %>
+   <div class="form-row">
+      <div class="form-group col-md-6">
+      <%= f.input :name %>
+    </div>
   <div class="form-group col-md-6">
     <%= f.input :phone_number %>
   </div>
@@ -15,12 +15,13 @@
     <div class="form-group col-md-12">
     <%= f.input :description, as: :text, :input_html => { cols: 5, rows: 6, maxlength: 600} %>
   </div>
-  <div>
-   <%= f.input :photos, input_html: {multiple: true}, as: :file, :label => "Upload charity logo and photos", class: "btn btn-primary" %>
-    </div>
-    <%= f.submit "Submit", class: "btn btn-primary" %>
-  <% end %>
 
-</div>
+    <div class="form-group col-md-12">
+   <%= f.input :photos, input_html: {multiple: true}, as: :file, :label => "Upload charity logo and photos", class: "btn btn-primary" %>
+   </div>
+   <%= f.submit "Submit", class: "btn btn-info btn-rounded" %>
+       
+  <% end %>
+  </div>
 
 </div>

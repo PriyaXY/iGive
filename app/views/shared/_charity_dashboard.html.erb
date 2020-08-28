@@ -1,7 +1,6 @@
  <div class="container">
     <div class="mx-auto">
-      <h2> <%= "Welcome #{current_user.charity.name}" %> </h2>
-
+      <p class="mb-5 mt-3"> Welcome <%= current_user.charity.name %></span> </p>
       <div class="card">
         <div class="card-header">
           <a class="card-link" data-toggle="collapse" href="#collapseOne">
@@ -30,41 +29,50 @@
           </div>
         </div>
       </div>
-      <h3 class="my-3">My Posted Missions</h3>
+
       <div class="d-flex justify-content-between my-3">
         <h3 class="">My Posted Missions</h3>
         <div><i class="fas fa-edit"></i> <%= link_to 'Post new mission', new_mission_path, class: "btn btn-rounded-sm btn-success" %></div>
       </div>
       <!-- Posted Missions -->
        <div class="list-group">
+        <% if @current_user.charity.missions.any? %>
         <% @current_user.charity.missions.each do |mission| %>
         <div class="list-group-item list-group-item-action flex-column align-items-start">
           <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1"><%= link_to "#{mission.title}", mission_path(mission) %></h5>
+            <h5 class="mt-2 mb-2 mission-title"><%= link_to "#{mission.title}", mission_path(mission) %></h5>
             <small><%= mission.start_date.strftime('%d/%m/%Y') %></small>
           </div>
           <!-- <p class="mb-1"><%= link_to "#{mission.title}", mission_path(mission) %></p> -->
           <%= link_to "Edit Mission", edit_mission_path(mission),  class: "btn btn-info btn-rounded-sm" %>
         </div>
         <% end %>
-        <div class="mt-2">
-          <%= link_to 'Post new mission', new_mission_path, class: "btn btn-success btn-rounded-sm"%>
-        </div>
+
+        <% else %>
+          <div class="list-group-item list-group-item-action flex-column align-items-start">
+            <p class="text-left no-information">No information available</p>
+          </div>
+        <% end %>
       </div>
 
-
-      <h3 class="my-3">My Pending Mission Requests</h3>
+      <h3 class="mt-5 mb-3">My Pending Mission Requests</h3>
 
       <!-- Pending Missions -->
       <div class="list-group">
+        <% if @pending_charity_applications.any? %>
         <% @pending_charity_applications.each do |booking| %>
        <div class="list-group-item list-group-item-action flex-column align-items-start">
           <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1"><%= booking.mission.title %></h5>
+            <h5 class="mt-2 mb-2 mission-title"><%= booking.mission.title %></h5>
            <small><%= booking.mission.start_date.strftime('%d/%m/%Y') %></small>
           </div>
           <%= link_to 'accept booking', accept_booking_path(booking: booking), class: "btn btn-info btn-rounded-sm" %>
         </div>
+        <% end %>
+        <% else %>
+          <div class="list-group-item list-group-item-action flex-column align-items-start">
+            <p class="text-left no-information">No information available</p>
+          </div>
         <% end %>
       </div>
    </div>
