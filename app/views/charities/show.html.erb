@@ -26,10 +26,39 @@
                 <td><span class="text-secondary"><%= @charity.website %></span></td>
               </tr>
           </table>
+        </ul>
        </div>
       </div>
      </div>
    </div>
+
+<div class="card">
+    <div class="card-header">
+      <a class="card-link" data-toggle="collapse" href="#collapseOne">
+        More info. about <%= @charity.name%>
+      </a>
+    </div>
+    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+      <div class="card-body">
+        <ul class="list-group">
+          <table class="table table-borderless table-sm">
+              <tr>
+                <td>Description:</td>
+                <td><span class="text-secondary"><%= @charity.description %></span></td>
+              </tr>
+              <tr>
+                <td>Phone Number:</td>
+                <td><span class="text-secondary"><%= @charity.phone_number%></span></td>
+              </tr>
+              <tr>
+                <td>Website:</td>
+                <td><span class="text-secondary"><%= @charity.website %></span></td>
+              </tr>
+          </table>
+        </ul>
+      </div>
+    </div>
+  </div>
 
 
 
