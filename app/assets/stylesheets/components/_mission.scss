@@ -1,0 +1,31 @@
+.mission-title{
+
+}
+
+.mission-title a{
+  color:#D54062;
+  text-decoration: none;
+}
+
+.mission-title a:hover {
+  color:#e93a62;
+}
+
+.no-information{
+  color:#aaa;
+  font-size:1.2em;
+}
+
+.warning{
+  background:#EBDC87;
+  border-radius:2em;
+  padding:0.5em 2em;
+  animation: blinker 1s 2s linear 2;
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+
