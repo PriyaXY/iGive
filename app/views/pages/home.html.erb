@@ -1,10 +1,12 @@
 
 <%= render "shared/carousel"%>
 <!-- end carousel -->
-
-  <div class="container my-4 text-center">
-    <h1 class="my-5">Help your community and become a hero today</h1>
-    <%= link_to 'See all missions', missions_path, class: "btn btn-sm btn-success btn-rounded"%>
+  <div class="container-fluid bg-white py-5">
+    <div class="container my-4 text-center">
+      <h1 class="my-5">Help your community and become a hero today</h1>
+      <p><%= image_tag "animated-igive-logo-infinite.gif", height: '200px' %></p>
+      <%= link_to 'See all missions', missions_path, class: "btn btn-sm btn-success btn-rounded btn-lg"%>
+    </div>
   </div>
 
   <div class="container-fluid search-box">

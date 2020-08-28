@@ -1,38 +1,37 @@
  <div class="container">
-    <h1 class="my-4">Your dashboard</h1>
     <div class="mx-auto">
-      <h2> <%= "Welcome #{current_user.charity.name}" %> </h2>
+      <p> <%= "Welcome #{current_user.charity.name}" %> </p>
       <%#= link_to 'accept booking', accept_booking_path(booking: booking), class: "btn btn-primary %>
-      <h1>Missions</h1>
+      <h3 class="my-3">My Posted Missions</h3>
 
-      <div class="mx-auto">
-        <h2>My Posted Missions</h2>
+      <!-- Posted Missions -->
+       <div class="list-group">
         <% @current_user.charity.missions.each do |mission| %>
-          <div>
-            <ul>
-              <li><%= link_to "#{mission.title}", mission_path(mission) %></li>
-              <li><%= mission.start_date.strftime('%d/%m/%Y') %></li>
-              <li><%= link_to "Edit Mission", edit_mission_path(mission),  class: "btn btn-primary" %></li>
-            </ul>
+        <div class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1"><%= link_to "#{mission.title}", mission_path(mission) %></h5>
+            <small><%= mission.start_date.strftime('%d/%m/%Y') %></small>
           </div>
-        <% end %>
-      </div>
-
-      <div>
-        <h2>My Pending Mission Requests</h2>
-        <% @pending_charity_applications.each do |booking| %>
-        <div>
-          <ul>
-           <li><%= booking.mission.title %></li>
-           <li><%= booking.mission.start_date.strftime('%d/%m/%Y') %></li>
-           <%= link_to 'accept booking', accept_booking_path(booking: booking), class: "btn btn-primary" %>
-          </ul>
+          <!-- <p class="mb-1"><%= link_to "#{mission.title}", mission_path(mission) %></p> -->
+          <%= link_to "Edit Mission", edit_mission_path(mission),  class: "btn btn-success btn-rounded-sm" %>
         </div>
         <% end %>
       </div>
 
-      <!-- <div class="mx-auto">
-        <h2>My Completed missions</h2>
-      </div> -->
+
+      <h3 class="my-3">My Pending Mission Requests</h3>
+
+      <!-- Pending Missions -->
+      <div class="list-group">
+        <% @pending_charity_applications.each do |booking| %>
+       <div class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1"><%= booking.mission.title %></h5>
+           <small><%= booking.mission.start_date.strftime('%d/%m/%Y') %></small>
+          </div>
+          <%= link_to 'accept booking', accept_booking_path(booking: booking), class: "btn btn-success btn-rounded-sm" %>
+        </div>
+        <% end %>
+      </div>
 
   </div>
