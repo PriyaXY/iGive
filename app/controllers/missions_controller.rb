@@ -54,7 +54,7 @@ class MissionsController < ApplicationController
   end
 
   def update
-    if current_user.missions.update(strong_params)
+    if current_user.charity.missions.update(strong_params)
       redirect_to dashboard_path
     else
       render :edit
