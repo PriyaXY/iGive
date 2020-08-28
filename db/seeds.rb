@@ -104,7 +104,7 @@ britishheartfoundation.save!
 battersea = Charity.new(user:user_battersea, name: "Battersea", phone_number: "0300 323 1216 ", description:"Battersea is here for every dog and cat, and has been since 1860. We believe that every dog and cat deserves the best. That's why we help every dog and cat in need – whether it's newly born or getting on, cute or cute in its own way. Find out more about our work and how we care for over 7,000 animals every year." , website: "https://www.battersea.org.uk/")
 battersea.save!
 
-kidsnetwork = Charity.new(user:user_kidsnetwork, name: "Kids Network," phone_number: "07378311397", description:"The Kids Network is looking for committed, fun and passionate volunteers who live or work in Hammersmith & Fulham, to make a difference to the children of London. Our structured mentoring programme supports 8 -11 year old's, based in Hammersmith & Fulham, at weekends with their social and emotional development before they transition into secondary school." , website: "https://thekidsnetwork.org.uk/")
+kidsnetwork = Charity.new(user:user_kidsnetwork, name: "Kids Network", phone_number: "07378311397", description:"The Kids Network is looking for committed, fun and passionate volunteers who live or work in Hammersmith & Fulham, to make a difference to the children of London. Our structured mentoring programme supports 8 -11 year old's, based in Hammersmith & Fulham, at weekends with their social and emotional development before they transition into secondary school." , website: "https://thekidsnetwork.org.uk/")
 kidsnetwork.save!
 puts 'Finished!'
 
