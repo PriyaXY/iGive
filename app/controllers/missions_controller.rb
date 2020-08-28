@@ -55,7 +55,7 @@ class MissionsController < ApplicationController
 
   def update
     if current_user.missions.update(strong_params)
-      redirect_to home_path
+      redirect_to dashboard_path
     else
       render :edit
     end

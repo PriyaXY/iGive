@@ -1,7 +1,35 @@
  <div class="container">
     <div class="mx-auto">
-      <p> <%= "Welcome #{current_user.charity.name}" %> </p>
-      <%#= link_to 'accept booking', accept_booking_path(booking: booking), class: "btn btn-primary %>
+      <h2> <%= "Welcome #{current_user.charity.name}" %> </h2>
+
+      <div class="card">
+        <div class="card-header">
+          <a class="card-link" data-toggle="collapse" href="#collapseOne">
+            More information about <%= @charity.name%>
+          </a>
+          <%= link_to "Edit Info.", edit_charity_path(@charity), class: "btn btn-success btn-rounded-sm" %>
+        </div>
+        <div id="collapseOne" class="collapse">
+          <div class="card-body">
+            <ul class="list-group">
+              <table class="table table-borderless table-sm">
+                <tr>
+                  <td>Description:</td>
+                  <td><span class="text-secondary"><%= @charity.description %></span></td>
+                </tr>
+                <tr>
+                  <td>Phone Number:</td>
+                  <td><span class="text-secondary"><%= @charity.phone_number%></span></td>
+                </tr>
+                <tr>
+                  <td>Website:</td>
+                  <td><span class="text-secondary"><%=@charity.website%></span></td>
+                </tr>
+              </table>
+            </ul>
+          </div>
+        </div>
+      </div>
       <h3 class="my-3">My Posted Missions</h3>
 
       <!-- Posted Missions -->
@@ -16,6 +44,9 @@
           <%= link_to "Edit Mission", edit_mission_path(mission),  class: "btn btn-success btn-rounded-sm" %>
         </div>
         <% end %>
+        <div class="mt-2">
+          <%= link_to 'Post new mission', new_mission_path, class: "btn btn-success btn-rounded-sm"%>
+        <div>
       </div>
 
 
@@ -33,5 +64,7 @@
         </div>
         <% end %>
       </div>
+
+
 
   </div>

@@ -1,11 +1,10 @@
 
 <div class="container">
 
-<% if current_user.charity.nil? %>
-   <%= render "shared/volunteer_dashboard" %>
-<% else %>
-  <%= render "shared/charity_dashboard"%>
-<% end %>
+  <% if current_user.charity.nil? %>
+     <%= render "shared/volunteer_dashboard" %>
+  <% else %>
+    <%= render "shared/charity_dashboard"%>
+  <% end %>
 
- <%= link_to 'Post new mission', new_mission_path, class: "btn btn-sm btn-primary"%>
 </div>
