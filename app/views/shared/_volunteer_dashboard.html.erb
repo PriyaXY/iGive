@@ -9,8 +9,11 @@
 <%#= else @volunteer_completed_missions.count == (0) %>
 <%#= end %>
 
+
+
 <div class="container">
-    <h1 class="my-4">Your dashboard</h1>
+    <h1><%= "Welcome back, #{current_user.first_name}!" %></h1>
+    <h3><%= "#{current_user.email}" %></h3>
     <div class="mx-auto">
         <!-- summary box for:
           - User welcome message
