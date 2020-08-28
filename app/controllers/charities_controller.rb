@@ -28,7 +28,7 @@ class CharitiesController < ApplicationController
   end
 
   def update
-    if current_user.charities.update(charity_params)
+    if current_user.charity.update(charity_params)
       redirect_to dashboard_path
     else
       render :edit
@@ -40,5 +40,4 @@ class CharitiesController < ApplicationController
   def charity_params
     params.require(:charity).permit(:user_id, :name, :phone_number, :description, :website)
   end
-
 end

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/dashboard", to: "pages#dashboard", as: 'dashboard'
   get "accept_booking/:booking", to: "bookings#accept_booking", as: 'accept_booking'
 
-  resources :charities, only: [:new, :create, :show]
+  resources :charities, only: [:new, :create, :show, :edit, :update]
   resources :missions do
     resources :bookings, only: [:create]
   end
