@@ -17,12 +17,12 @@
         <% else @volunteer_completed_missions.count >=  15 %>
         <%= image_tag "shield-super-user.png", alt: "alttext" %>
       <% end %>
+
       <div>
         <p>How much further to go till you level up...</p>
         <%= render "shared/progress_bar", volunteer_completed_missions: @volunteer_completed_missions %>
       </div>
-      </div>
-
+   </div>
       <div class="mx-auto">
         <!-- summary box for:
           - x days left before next mission

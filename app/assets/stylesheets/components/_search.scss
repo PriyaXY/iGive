@@ -4,6 +4,20 @@
 }
 
 .container-search-bar{
-  margin:1em auto;
-  width:60%;
+  margin:0 auto;
 }
+
+.search-label{
+  text-align:center;
+  width:100%;
+  font-size:2em;
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .search-label{
+    font-size:1.5em;
+  }
+
+}
+
+

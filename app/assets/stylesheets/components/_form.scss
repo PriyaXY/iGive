@@ -23,3 +23,9 @@ form{
 .sheild {
   height: 4em;
 }
+
+.container-search-bar > form input::placeholder{
+  font-size:0.8em;
+}
+
+
