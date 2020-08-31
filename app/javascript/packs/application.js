@@ -40,5 +40,10 @@ document.addEventListener('turbolinks:load', () => {
 })
 
 
-import { initChatroomCable };
+import { initChatroomCable } from '../channels/chatroom_channel.js' ;
+
+document.addEventListener('turbolinks:load', () => {
+  initChatroomCable();
+})
+
 
