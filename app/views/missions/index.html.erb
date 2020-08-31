@@ -1,3 +1,10 @@
+
+
+<%#=Mission::CATEGORIES.each do |category_name|  %>
+ <%#=link_to category_name, missions_path(category: category_name)  %>
+<%#= end %>
+
+
 <div class="container">
   <h1 class="my-4">Help needed! See all Missions </h1>
   <% @missions.order(start_date: :asc).each do |mission| %>
@@ -18,3 +25,4 @@
   <% end %>
   <%= link_to 'Home', root_path, class: "btn btn-rounded-sm btn-success"%>
 </div>
+

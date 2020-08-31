@@ -12,4 +12,7 @@ class Mission < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+  CATEGORIES = ['Children', 'Environment', 'Food', 'Animals', 'Women', 'Admin', 'Retail']
+
 end
