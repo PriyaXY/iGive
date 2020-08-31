@@ -19,15 +19,16 @@
 /* navbar for mobile  */
 
 @media (min-width: 100px) and (max-width: 575px) {
-
- .navbar-collapse{
-  display:none;
- }
+  .navbar-collapse{
+    display:none;
+  }
 
  .footer-mobile-navbar{
-  display:flex;
-  flex-direction: row;
-  background:#D54062;
+    display:flex;
+    flex-direction: row;
+    background:#D54062;
+    padding:15px 6px;
+    justify-content:center;
   }
 
   .mr-auto, .mx-auto {
@@ -40,16 +41,27 @@
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
+    justify-content:center;
+    align-items:stretch;
+  }
+
+  .nav-item{
+    margin:0 1em;
+    text-align:center;
   }
 
   .nav-item a{
     color:#fff;
+    padding-top:0;
+    text-align:center;
   }
 
   .footer-mobile-navbar i.fas, .footer-mobile-navbar i.far{
     color:white;
-    display:inline-block;
+    padding-right:6px;
+    font-size:2em;
   }
+
 }
 
 
