@@ -28,13 +28,15 @@ class MissionsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { mission: mission })
       }
     end
-
     if params[:query].nil? || (params[:query] == "")
       @missions = Mission.all
+    elsif params[:distance].nil? || (params[:distance] == "")
+      @missions = @missions.near(params[:query], 10)
     else
-      params[:query]
-      @missions = @missions.near(params[:query], 20)
+      @missions = @missions.near(params[:query], params[:distance].to_i)
     end
+
+    @missions = Mission.where(category: params[:category_name])
   end
 
   def create
