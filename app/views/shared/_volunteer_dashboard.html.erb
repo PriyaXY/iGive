@@ -4,18 +4,17 @@
       <h3><%= "#{current_user.email}" %></h3>
 
 
-      <h2><%="Your Favourite Preferences"%></h2>   
+      <h2><%="Your Favourite Preferences"%></h2>
 
       <% if  @volunteer_completed_missions.count < 5 %>
-        <%= image_tag "heart.png", alt: "alttext", class: "sheild"  %>
+        <%= image_tag "heart.png", alt: "alttext", height: "300"  %>
          <%= "You are a valued contributor"  %>
         <% elsif @volunteer_completed_missions.count < 10 %>
-        <%= image_tag "sheild-first-time-user.png", alt: "alttext"%>
+        <div class="big-badge"><%= image_tag "sheild-first-time-user.png", alt: "alttext"%></div>
         <% elsif @volunteer_completed_missions.count <  15 %>
-         <%= image_tag "shield-average.png", alt: "alttext" %>
-         <%= image_tag "shield-super-user.png", alt: "alttext" %>
+         <div class="big-badge"><%= image_tag "shield-average.png", alt: "alttext" %></div>
         <% else @volunteer_completed_missions.count >=  15 %>
-        <%= image_tag "shield-super-user.png", alt: "alttext" %>
+        <div class="big-badge"><%= image_tag "shield-super-user.png", alt: "alttext" %></div>
       <% end %>
 
       <div>
