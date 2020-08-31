@@ -1,0 +1,5 @@
+meta_product_name: "iGive"
+meta_title: "iGive | Help Your Community & Become A local Hero"
+meta_description: "Find the most pressing social issues in your area, offering volunteering opportunities and a skills-bank."
+meta_image: "meta-cover.jpg" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

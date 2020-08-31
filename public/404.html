@@ -4,64 +4,534 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+  .container-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    a{
+      text-decoration: none;
+    }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    body {
+        background-color: white;
+        font-family: "Work Sans", "Helvetica", "sans-serif";
+        width:100%;
+        margin:0;
+        padding: 0;
+    }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+    .errorpage {
+        width: 400px;
+        height: 800px;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .bodyerror,
+    .headerror,
+    .eyeserror,
+    .leftarmerror,
+    .rightarmerror,
+    .chairerror,
+    .leftshoeerror,
+    .rightshoeerror,
+    .legserror,
+    .laptoperror {
+        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/15979/404-character-new.png)
+            0 0 no-repeat;
+        width: 200px;
+        height: 200px;
+    }
+
+    .newcharactererror,
+    .torsoerror,
+    .bodyerror,
+    .headerror,
+    .eyeserror,
+    .leftarmerror,
+    .rightarmerror,
+    .chairerror,
+    .leftshoeerror,
+    .rightshoeerror,
+    .legserror,
+    .laptoperror {
+        background-size: 750px;
+        position: absolute;
+        display: block;
+    }
+
+    .newcharactererror {
+        width: 400px;
+        height: 800px;
+        left: 50%;
+        top: 30%;
+        margin-left: -200px;
+    }
+
+    $swayspeed: 20s;
+
+    .torsoerror {
+        position: absolute;
+        display: block;
+        top: 138px;
+        left: 0px;
+        width: 389px;
+        height: 252px;
+        animation: sway $swayspeed ease infinite;
+        transform-origin: 50% 100%;
+    }
+
+    .bodyerror {
+        position: absolute;
+        display: block;
+        top: 0px;
+        left: 0px;
+        width: 389px;
+        height: 253px;
+    }
+
+    .headerror {
+        position: absolute;
+        top: -148px;
+        left: 106px;
+        width: 160px;
+        height: 194px;
+        background-position: 0px -265px;
+        transform-origin: 50% 85%;
+        animation: headTilt $swayspeed ease infinite;
+    }
+
+    .eyeserror {
+        position: absolute;
+        top: 92px;
+        left: 34px;
+        width: 73px;
+        height: 18px;
+        background-position: -162px -350px;
+        animation: blink404 10s steps(1) infinite, pan 10s ease-in-out infinite;
+    }
+
+    .leftarmerror {
+        position: absolute;
+        top: 159px;
+        left: 0;
+        width: 165px;
+        height: 73px;
+        background-position: -265px -341px;
+        transform-origin: 9% 35%;
+        transform: rotateZ(0deg);
+        animation: typeLeft 0.4s linear infinite;
+    }
+
+    .rightarmerror {
+        position: absolute;
+        top: 148px;
+        left: 231px;
+        width: 157px;
+        height: 91px;
+        background-position: -442px -323px;
+        transform-origin: 90% 25%;
+        animation: typeLeft 0.4s linear infinite;
+    }
+
+    .chairerror {
+        position: absolute;
+        top: 430px;
+        left: 55px;
+        width: 260px;
+        height: 365px;
+        background-position: -12px -697px;
+    }
+
+    .legserror {
+        position: absolute;
+        top: 378px;
+        left: 4px;
+        width: 370px;
+        height: 247px;
+        background-position: -381px -443px;
+    }
+
+    .leftshoeerror {
+        position: absolute;
+        top: 591px;
+        left: 54px;
+        width: 130px;
+        height: 92px;
+        background-position: -315px -749px;
+    }
+
+    .rightshoeerror {
+        position: absolute;
+        top: 594px;
+        left: 187px;
+        width: 135px;
+        height: 81px;
+        background-position: -453px -749px;
+        transform-origin: 35% 12%;
+        animation: tapRight 1s linear infinite;
+    }
+
+    .laptoperror {
+        position: absolute;
+        top: 186px;
+        left: 9px;
+        width: 365px;
+        height: 216px;
+        background-position: -2px -466px;
+        transform-origin: 50% 100%;
+        animation: tapWobble 0.4s linear infinite;
+    }
+
+    @keyframes sway {
+        0% {
+            transform: rotateZ(0deg);
+        }
+        20% {
+            transform: rotateZ(0deg);
+        }
+        25% {
+            transform: rotateZ(4deg);
+        }
+        45% {
+            transform: rotateZ(4deg);
+        }
+        50% {
+            transform: rotateZ(0deg);
+        }
+        70% {
+            transform: rotateZ(0deg);
+        }
+        75% {
+            transform: rotateZ(-4deg);
+        }
+        90% {
+            transform: rotateZ(-4deg);
+        }
+        100% {
+            transform: rotateZ(0deg);
+        }
+    }
+
+    @keyframes headTilt {
+        0% {
+            transform: rotateZ(0deg);
+        }
+        20% {
+            transform: rotateZ(0deg);
+        }
+        25% {
+            transform: rotateZ(-4deg);
+        }
+        35% {
+            transform: rotateZ(-4deg);
+        }
+        38% {
+            transform: rotateZ(2deg);
+        }
+        42% {
+            transform: rotateZ(2deg);
+        }
+        45% {
+            transform: rotateZ(-4deg);
+        }
+        50% {
+            transform: rotateZ(0deg);
+        }
+        70% {
+            transform: rotateZ(0deg);
+        }
+        82% {
+            transform: rotateZ(0deg);
+        }
+        85% {
+            transform: rotateZ(4deg);
+        }
+        90% {
+            transform: rotateZ(4deg);
+        }
+        100% {
+            transform: rotateZ(0deg);
+        }
+    }
+
+    @keyframes typeLeft {
+        0% {
+            transform: rotateZ(0deg);
+        }
+        25% {
+            transform: rotateZ(7deg);
+        }
+        75% {
+            transform: rotateZ(-6deg);
+        }
+        100% {
+            transform: rotateZ(0deg);
+        }
+    }
+
+    @keyframes typeRight {
+        0% {
+            transform: rotateZ(0deg);
+        }
+        25% {
+            transform: rotateZ(-6deg);
+        }
+        75% {
+            transform: rotateZ(7deg);
+        }
+        100% {
+            transform: rotateZ(0deg);
+        }
+    }
+
+    @keyframes tapWobble {
+        0% {
+            transform: rotateZ(-0.2deg);
+        }
+        50% {
+            transform: rotateZ(0.2deg);
+        }
+        100% {
+            transform: rotateZ(-0.2deg);
+        }
+    }
+
+    @keyframes tapRight {
+        0% {
+            transform: rotateZ(0deg);
+        }
+        90% {
+            transform: rotateZ(-6deg);
+        }
+        100% {
+            transform: rotateZ(0deg);
+        }
+    }
+
+    @keyframes blinkerror {
+        0% {
+            background-position: -162px -350px;
+        }
+        94% {
+            background-position: -162px -350px;
+        }
+        98% {
+            background-position: -162px -368px;
+        }
+        100% {
+            background-position: -162px -350px;
+        }
+    }
+
+    @keyframes pan {
+        0% {
+            transform: translateX(-2px);
+        }
+        49% {
+            transform: translateX(-2px);
+        }
+        50% {
+            transform: translateX(2px);
+        }
+        99% {
+            transform: translateX(2px);
+        }
+        100% {
+            transform: translateX(-2px);
+        }
+    }
+
+    /* navbar styling */
+
+    .navbar-lewagon {
+      justify-content: space-between;
+      background: white;
+    }
+
+    .navbar-lewagon .navbar-collapse {
+      flex-grow: 0;
+    }
+
+    .navbar-lewagon .navbar-brand img {
+      width: 40px;
+    }
+
+    .navbar-lewagon {
+    justify-content: space-between;
+    background: white;
+    }
+
+
+    .navbar {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+
+
+    .navbar .container, .navbar .container-fluid, .navbar .container-sm, .navbar .container-md, .navbar .container-lg, .navbar .container-xl {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .container, .container-fluid, .container-xl, .container-lg, .container-md, .container-sm {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .navbar-light .navbar-brand {
+    color: rgba(0, 0, 0, 0.9);
+    }
+
+    .navbar-brand {
+        display: inline-block;
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+    }
+
+    .navbar-lewagon .navbar-brand img {
+        width: 2em;
+    }
+
+    img {
+        vertical-align: middle;
+        border-style: none;
+    }
+
+    .navbar-lewagon .navbar-collapse {
+        flex-grow: 0;
+    }
+
+
+    .navbar-nav {
+        display: flex;
+        padding-left: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .mr-auto, .mx-auto {
+        margin-right: auto !important;
+    }
+
+    .navbar-expand-sm .navbar-nav .nav-link {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        color:#D54062;
+    }
+
+    @media (min-width: 576px)
+    .navbar-expand-sm .navbar-nav {
+        flex-direction: row;
+    }
+
+    @media (min-width: 576px)
+    .navbar-expand-sm .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+
+    @media (min-width: 576px)
+    .navbar-expand-sm {
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+    }
+
+
+    @media (min-width: 992px)
+    .container-lg, .container-md, .container-sm, .container {
+        max-width: 960px;
+    }
+    @media (min-width: 768px)
+    .container-md, .container-sm, .container {
+        max-width: 720px;
+    }
+    @media (min-width: 576px)
+    .container-sm, .container {
+        max-width: 540px;
+    }
+
+    .heading-error{
+      font-size:1.2em;
+      color:rgba(0, 0, 0, 0.5);
+      width:80%;
+      margin:0 auto;
+      z-index: 100;
+      text-align: center;
+      position: absolute;
+      top:0px;
+    }
+
   </style>
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+
+      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container">
+      <a class="navbar-brand" href="http://www.igive.community/">
+      <div style="display:flex;">
+        <div style="flex:1; margin-right: 15px;"><img src="/assets/animated-igive-logo-infinite-28c4cbeb5f71fa90127ae94038474c83009048e851a3d1f8a80e2a2ca48b0952.gif"></div>
+        <div style="flex:1; font-size:36px;">iGive
+          <span style="font-size:12px; display:block; line-height: 0em;">Be a local hero</span></div>
+      </div>
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboard">My account</a>
+            </li>
+        </ul>
+      </div>
+  </div>
+</div>
+
+
+  <div class="container-error">
+    <h1 class="heading-error"> The page you were looking for doesn't exist.<br>
+      You may have mistyped the address or the page may have moved.</h1>
+    <div class="errorpage">
+        <div class="newcharactererror">
+            <div class="chairerror"></div>
+            <div class="leftshoeerror"></div>
+            <div class="rightshoeerror"></div>
+            <div class="legserror"></div>
+            <div class="torsoerror">
+                <div class="bodyerror"></div>
+                <div class="leftarmerror"></div>
+                <div class="rightarmerror"></div>
+                <div class="headerror">
+                    <div class="eyeserror"></div>
+                </div>
+            </div>
+            <div class="laptoperror"></div>
+        </div>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+
   </div>
 </body>
 </html>
