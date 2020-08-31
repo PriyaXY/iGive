@@ -20,7 +20,6 @@ class MissionsController < ApplicationController
   end
 
   def index
-    @missions = Mission.all
     @missions = Mission.geocoded
 
     @markers = @missions.map do |mission|
@@ -34,11 +33,13 @@ class MissionsController < ApplicationController
       @missions = Mission.all
     elsif params[:distance].nil? || (params[:distance] == "")
       @missions = @missions.near(params[:query], 10)
+    elsif params[:categories]
+      @missions = @missions.filter_by_category(params[:categories])
     else
       @missions = @missions.near(params[:query], params[:distance].to_i)
     end
 
-    @missions = Mission.where(category: params[:category_name])
+    @missions = @missions.where(category: params[:category_name])
   end
 
   def create
@@ -72,6 +73,6 @@ class MissionsController < ApplicationController
   end
 
   def strong_params
-    params.require(:mission).permit(:start_date, :title, :description, :address, :number_of_volunteers, photos: [])
+    params.require(:mission).permit(:start_date, :title, :description, :address, :number_of_volunteers, :category, photos: [])
   end
 end

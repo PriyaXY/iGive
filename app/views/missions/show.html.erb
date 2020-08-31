@@ -53,7 +53,7 @@
               </tr>
                <tr>
                 <td>Volunteers Needed: </td>
-                <td><span class="text-secondary"><%= @mission.number_of_volunteers %></span></td>
+                <td><span><%= render "shared/progress_bar", volunteer_completed_missions: @volunteer_completed_missions %></span></td>
               </tr>
           </table>
         </ul>
