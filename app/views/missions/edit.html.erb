@@ -8,6 +8,7 @@
           <%= f.input :title %>
           <%= f.input :number_of_volunteers %>
           <%= f.input :address %>
+          <%= f.input :category, :collection => ['Children', 'Environment', 'Food', 'Animals', 'Women', 'Admin', 'Retail'] %>
           <%= f.input :description, as: :text, :input_html => { cols: 5, rows: 6, maxlength: 600} %>
           <%= f.input :photos, input_html: {multiple: true}, as: :file, :label => "Upload charity logo and photos", class: "btn btn-primary" %>
         </div>

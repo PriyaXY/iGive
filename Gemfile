@@ -25,6 +25,8 @@ gem 'cloudinary', '~> 1.12.0'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
+gem 'bootstrap-select-rails'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

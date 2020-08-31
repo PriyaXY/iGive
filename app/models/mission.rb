@@ -15,4 +15,8 @@ class Mission < ApplicationRecord
 
   CATEGORIES = ['Children', 'Environment', 'Food', 'Animals', 'Women', 'Admin', 'Retail']
 
+  scope :filter_by_category, -> (category_array) { where category: category_array }
+
+  validates :category, presence: true
+
 end
