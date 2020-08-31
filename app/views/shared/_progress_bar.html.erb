@@ -1,20 +1,25 @@
-<div>
+<div class="container-progressbar">
   <% if @volunteer_completed_missions.count < 5  %>
-     <% level = 'Level 1' %>
-
-      <%#= image_tag "heart.png", alt: "alttext", class: "shield"  %>
-      <%#= image_tag "shield-first-time-user.png", alt: "alttext"%>
+     <% level = 'LEVEL 1' %>
+    <div class="badge-container">
+      <div><%= image_tag("heart.png", height: '65', alt: "alttext")%> Novice</div>
+      <div><%= image_tag("shield-first-time-user.png", height: '50', alt: "alttext")%>Intermediate</div>
+    </div>
   <% elsif @volunteer_completed_missions.count < 10  %>
-     <% level = 'Level 2' %>
-     <%#= image_tag "shield-first-time-user.png", alt: "alttext"%>
-     <%#= image_tag "shield-average.png", alt: "alttext" %>
+     <% level = 'LEVEL 2' %>
+     <div class="badge-container">
+        <%= image_tag("shield-first-time-user.png", height: '50', alt: "alttext")%>
+        <%= image_tag("shield-average.png", height: '65', alt: "alttext")%>
+     </div>
   <% elsif @volunteer_completed_missions.count < 15  %>
-     <% level = 'Level 3' %>
-     <%#= image_tag "shield-average.png", alt: "alttext" %>
-     <%#= image_tag "shield-super-user.png", alt: "alttext" %>
+    <% level = 'LEVEL 3' %>
+    <div class="badge-container">
+      <%= image_tag "shield-average.png", height: '50', alt: "alttext" %>
+      <%= image_tag "shield-super-user.png", height: '50', alt: "alttext" %>
+    </div>
   <% else @volunteer_completed_missions.count > 15  %>
-     <%#= image_tag "shield-super-user.png", alt: "alttext" %>
-     <% level = 'Level Hero' %>
+     <div><%= image_tag "shield-super-user.png", height: '50', alt: "alttext" %></div>
+     <% level = 'LEVEL Hero' %>
   <% end %>
 
   <% if [0, 5, 10].include?(@volunteer_completed_missions.count) %>
