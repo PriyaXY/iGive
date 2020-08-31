@@ -1,20 +1,32 @@
 <div class="container">
   <h1 class="my-4">Help needed! See all Missions </h1>
   <% @missions.order(start_date: :asc).each do |mission| %>
-    <div class="card mb-3 p-2">
-      <div>
-          <%="Start date: #{mission.start_date.strftime('%d/%m/%Y')}"%>
-      </div>
-      <div>
-        <%=link_to "Mission: #{mission.title}", mission_path(mission) %>
-      </div>
-      <div>
-        <%="Charity: #{mission.charity.name}"%>
-      </div>
-      <div>
-        <%="Location: #{mission.address}"%>
-      </div>
-    </div>
+    <% if mission.start_date > Date.today %>
+      <% if mission.number_of_volunteers - mission.bookings.where(status: "accepted").count > 0 %>
+        <div class="card mb-3 p-2">
+          <div>
+            <%= render "shared/icon_count", mission: mission %>
+          </div>
+            <% if mission.start_date < (Date.today + 7) %>
+            <div>
+              <h2>URGENT styling here</h2>
+            </div>
+          <% end %>
+          <div>
+              <%="Start date: #{mission.start_date.strftime('%d/%m/%Y')}"%>
+          </div>
+          <div>
+            <%=link_to "Mission: #{mission.title}", mission_path(mission) %>
+          </div>
+          <div>
+            <%="Charity: #{mission.charity.name}"%>
+          </div>
+          <div>
+            <%="Location: #{mission.address}"%>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   <% end %>
   <%= link_to 'Home', root_path, class: "btn btn-rounded-sm btn-success"%>
 </div>

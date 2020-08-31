@@ -1,4 +1,6 @@
 class MissionsController < ApplicationController
+  before_action :icon_count, only: [:index, :show]
+
   def new
     redirect_to root_path if current_user.charity.nil?
     @mission = Mission.new
@@ -61,6 +63,11 @@ class MissionsController < ApplicationController
   end
 
   private
+
+  def icon_count
+    accepted_volunteer_bookings = current_user.bookings.where(status: "accepted")
+    @accepted_volunteer_missions = accepted_volunteer_bookings.includes(:mission).where('missions.start_date > ?', Date.today).references(:mission)
+  end
 
   def strong_params
     params.require(:mission).permit(:start_date, :title, :description, :address, :number_of_volunteers, photos: [])
