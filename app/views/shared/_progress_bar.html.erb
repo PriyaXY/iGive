@@ -1,52 +1,52 @@
 <div class="container-progressbar">
-  <% if @volunteer_completed_missions.count < 5  %>
-     <% level = 'LEVEL 1' %>
-    <div class="badge-container">
-      <div><%= image_tag("heart.png", height: '65', alt: "alttext")%> Novice</div>
-      <div><%= image_tag("shield-first-time-user.png", height: '50', alt: "alttext")%>Intermediate</div>
+    <% if @volunteer_completed_missions.count < 5  %>
+       <% level = 'LEVEL 1' %>
+      <div class="badge-container">
+        <div><%= image_tag("heart.png", height: '65', alt: "alttext")%> Novice</div>
+        <div><%= image_tag("shield-first-time-user.png", height: '50', alt: "alttext")%>Intermediate</div>
+      </div>
+    <% elsif @volunteer_completed_missions.count < 10  %>
+       <% level = 'LEVEL 2' %>
+       <div class="badge-container">
+          <%= image_tag("shield-first-time-user.png", height: '50', alt: "alttext")%>
+          <%= image_tag("shield-average.png", height: '65', alt: "alttext")%>
+       </div>
+    <% elsif @volunteer_completed_missions.count < 15  %>
+      <% level = 'LEVEL 3' %>
+      <div class="badge-container">
+        <%= image_tag "shield-average.png", height: '50', alt: "alttext" %>
+        <%= image_tag "shield-super-user.png", height: '50', alt: "alttext" %>
+      </div>
+    <% else @volunteer_completed_missions.count > 15  %>
+       <div><%= image_tag "shield-super-user.png", height: '50', alt: "alttext" %></div>
+       <% level = 'LEVEL Hero' %>
+    <% end %>
+
+    <% if [0, 5, 10].include?(@volunteer_completed_missions.count) %>
+    <div class="progress" style="height: 40px;">
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><%= "#{level}" %></div>
     </div>
-  <% elsif @volunteer_completed_missions.count < 10  %>
-     <% level = 'LEVEL 2' %>
-     <div class="badge-container">
-        <%= image_tag("shield-first-time-user.png", height: '50', alt: "alttext")%>
-        <%= image_tag("shield-average.png", height: '65', alt: "alttext")%>
-     </div>
-  <% elsif @volunteer_completed_missions.count < 15  %>
-    <% level = 'LEVEL 3' %>
-    <div class="badge-container">
-      <%= image_tag "shield-average.png", height: '50', alt: "alttext" %>
-      <%= image_tag "shield-super-user.png", height: '50', alt: "alttext" %>
+    <% elsif [1, 6, 11].include?(@volunteer_completed_missions.count) %>
+    <div class="progress" style="height: 40px;">
+      <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><%= "#{level}" %></div>
     </div>
-  <% else @volunteer_completed_missions.count > 15  %>
-     <div><%= image_tag "shield-super-user.png", height: '50', alt: "alttext" %></div>
-     <% level = 'LEVEL Hero' %>
-  <% end %>
 
-  <% if [0, 5, 10].include?(@volunteer_completed_missions.count) %>
-  <div class="progress" style="height: 40px;">
-    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><%= "#{level}" %></div>
-  </div>
-  <% elsif [1, 6, 11].include?(@volunteer_completed_missions.count) %>
-  <div class="progress" style="height: 40px;">
-    <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><%= "#{level}" %></div>
-  </div>
+    <% elsif [2, 7, 12].include?(@volunteer_completed_missions.count) %>
+    <div class="progress" style="height: 40px;">
+      <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><%= "#{level}" %></div>
+    </div>
 
-  <% elsif [2, 7, 12].include?(@volunteer_completed_missions.count) %>
-  <div class="progress" style="height: 40px;">
-    <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><%= "#{level}" %></div>
-  </div>
-
-  <% elsif [3, 8, 13].include?(@volunteer_completed_missions.count) %>
-  <div class="progress" style="height: 40px;">
-    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><%= "#{level}" %></div>
-  </div>
-  <% elsif [4, 9, 14].include?(@volunteer_completed_missions.count) %>
-  <div class="progress" style="height: 40px;">
-    <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><%= "#{level}" %></div>
-  </div>
-  <% else %>
-  <div class="progress" style="height: 40px;">
-    <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><%= "#{level}" %></div>
-  </div>
+    <% elsif [3, 8, 13].include?(@volunteer_completed_missions.count) %>
+    <div class="progress" style="height: 40px;">
+      <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><%= "#{level}" %></div>
+    </div>
+    <% elsif [4, 9, 14].include?(@volunteer_completed_missions.count) %>
+    <div class="progress" style="height: 40px;">
+      <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><%= "#{level}" %></div>
+    </div>
+    <% else %>
+    <div class="progress" style="height: 40px;">
+      <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><%= "#{level}" %></div>
+    </div>
   <% end %>
 </div>

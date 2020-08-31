@@ -9,6 +9,13 @@ class MissionsController < ApplicationController
   def show
     @mission = Mission.find(params[:id])
     @charity = @mission.charity
+    bookings = Booking.all
+
+    if current_user.bookings.includes(:mission).where('missions.start_date < ?', Date.today).references(:mission).nil?
+      @volunteer_completed_missions = []
+    else
+      @volunteer_completed_missions = bookings.includes(:mission).where('missions.start_date < ?', Date.today).references(:mission)
+    end
 
     @markers = [
       {

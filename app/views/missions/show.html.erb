@@ -52,8 +52,8 @@
                 <td><span class="text-secondary"><%= @mission.address %></span></td>
               </tr>
                <tr>
-                <td>Volunteers Needed: </td>
-                <td><span><%= render "shared/progress_bar", volunteer_completed_missions: @volunteer_completed_missions %></span></td>
+                <td>Volunteers Needed: </td><% mission = @mission %>
+                <td><span><%= render "shared/icon_count", mission: mission %></span></td>
               </tr>
           </table>
         </ul>
