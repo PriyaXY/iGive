@@ -1,9 +1,16 @@
+<%# simple_form_for :missions, url: missions_path do |f| %>
+<%# f.collection_check_boxes :category_ids, Mission::CATEGORIES, :id, :name %>
+<%# end %>
 
-
-<%#=Mission::CATEGORIES.each do |category_name|  %>
- <%#=link_to category_name, missions_path(category: category_name)  %>
-<%#= end %>
-
+ <%= form_tag missions_path, method: :get do %>
+    <% Mission::CATEGORIES.each do |category| %>
+          <%= check_box_tag 'category[]', category -%>
+          <%= category -%>
+       <% end %>
+        <% end %>
+        <div class="form-actions">
+          <%= link_to "Search", missions_path, class: "btn btn-rounded-sm btn-success" %>
+        </div>
 
 <div class="container">
   <h1 class="my-4">Help needed! See all Missions </h1>
@@ -30,6 +37,9 @@
           </div>
           <div>
             <%="Location: #{mission.address}"%>
+          </div>
+          <div>
+            <%="Category: #{mission.category}"%>
           </div>
         </div>
       <% end %>

@@ -3,6 +3,8 @@
       <h1><%= "Welcome back, #{current_user.first_name}!" %></h1>
       <h3><%= "#{current_user.email}" %></h3>
 
+      <h2><%="Your Favourite Preferences"%></h2>
+
       <% if  @volunteer_completed_missions.count <= 5 %>
         <%= image_tag "heart.png", alt: "alttext", class: "sheild"  %>
          <%= "You are a valued contributor"  %>

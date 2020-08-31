@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   resources :charities, only: [:new, :create, :show, :edit, :update]
   resources :missions do
-    resources :bookings, only: [:create]
+  resources :bookings, only: [:create]
+  resources :chatrooms, only: :show
   end
 
 end
