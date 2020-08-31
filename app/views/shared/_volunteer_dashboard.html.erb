@@ -3,21 +3,24 @@
       <h1><%= "Welcome back, #{current_user.first_name}!" %></h1>
       <h3><%= "#{current_user.email}" %></h3>
 
-      <h2><%="Your Favourite Preferences"%></h2>
 
-      <% if  @volunteer_completed_missions.count <= 5 %>
+      <h2><%="Your Favourite Preferences"%></h2>   
+
+      <% if  @volunteer_completed_missions.count < 5 %>
         <%= image_tag "heart.png", alt: "alttext", class: "sheild"  %>
          <%= "You are a valued contributor"  %>
-        <% elsif @volunteer_completed_missions.count <= 10 %>
+        <% elsif @volunteer_completed_missions.count < 10 %>
         <%= image_tag "sheild-first-time-user.png", alt: "alttext"%>
-        <% elsif @volunteer_completed_missions.count <=  20 %>
+        <% elsif @volunteer_completed_missions.count <  15 %>
          <%= image_tag "shield-average.png", alt: "alttext" %>
-        <% elsif @volunteer_completed_missions.count >  20 %>
+         <%= image_tag "shield-super-user.png", alt: "alttext" %>
+        <% else @volunteer_completed_missions.count >=  15 %>
         <%= image_tag "shield-super-user.png", alt: "alttext" %>
-        <% else %>
       <% end %>
-      <% raise %>
-      <%= render "shared/progress_bar", volunteer_completed_missions: @volunteer_completed_missions %>
+      <div>
+        <p>How much further to go till you level up...</p>
+        <%= render "shared/progress_bar", volunteer_completed_missions: @volunteer_completed_missions %>
+      </div>
       </div>
 
       <div class="mx-auto">
