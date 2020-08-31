@@ -1,0 +1,7 @@
+
+<% mission.bookings.where(status: "accepted").count.times do%>
+   <i class="fas fa-user-check"></i>
+<% end %>
+<% mission.number_of_volunteers - mission.bookings.where(status: "accepted").count.times do %>
+ <i class="fas fa-user"></i>
+<% end %>
