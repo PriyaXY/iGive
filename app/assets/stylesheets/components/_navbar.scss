@@ -10,3 +10,48 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.footer-mobile-navbar{
+  display:none;
+}
+
+
+/* navbar for mobile  */
+
+@media (min-width: 100px) and (max-width: 575px) {
+
+ .navbar-collapse{
+  display:none;
+ }
+
+ .footer-mobile-navbar{
+  display:flex;
+  flex-direction: row;
+  background:#D54062;
+  }
+
+  .mr-auto, .mx-auto {
+    margin-right: auto !important;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+
+  .nav-item a{
+    color:#fff;
+  }
+
+  .footer-mobile-navbar i.fas, .footer-mobile-navbar i.far{
+    color:white;
+    display:inline-block;
+  }
+}
+
+
+
+
