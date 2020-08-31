@@ -20,6 +20,7 @@ class MissionsController < ApplicationController
   end
 
   def index
+    @missions = Mission.all
     @missions = Mission.geocoded
 
     @markers = @missions.map do |mission|
@@ -38,8 +39,11 @@ class MissionsController < ApplicationController
     else
       @missions = @missions.near(params[:query], params[:distance].to_i)
     end
+    if params['/missions']
+      index_params
+    @missions = @missions.where(category: params['/missions'][:category] )
 
-    @missions = @missions.where(category: params[:category_name])
+    end
   end
 
   def create
@@ -66,6 +70,10 @@ class MissionsController < ApplicationController
   end
 
   private
+
+  def index_params
+    params['/missions'].permit(:category)
+  end
 
   def icon_count
     accepted_volunteer_bookings = current_user.bookings.where(status: "accepted")

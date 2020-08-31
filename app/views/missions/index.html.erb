@@ -2,15 +2,13 @@
 <%# f.collection_check_boxes :category_ids, Mission::CATEGORIES, :id, :name %>
 <%# end %>
 
- <%= form_tag missions_path, method: :get do %>
-    <% Mission::CATEGORIES.each do |category| %>
-          <%= check_box_tag 'category[]', category -%>
-          <%= category -%>
-       <% end %>
-        <% end %>
+ <%= simple_form_for missions_path, method: :get do |f| %>
+   <%= f.input :category, as: :check_boxes, collection: Mission::CATEGORIES %>
         <div class="form-actions">
-          <%= link_to "Search", missions_path, class: "btn btn-rounded-sm btn-success" %>
+          <%= f.submit "Submit", class: "btn btn-rounded-sm btn-success" %>
         </div>
+        <% end %>
+
 
 <div class="container">
   <h1 class="my-4">Help needed! See all Missions </h1>
