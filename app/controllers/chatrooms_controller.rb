@@ -1,23 +1,23 @@
-# class ChatroomsController < ApplicationController
-#   def show
-#    @chatroom = Chatroom.find(params[:id])
-#  end
+class ChatroomsController < ApplicationController
+  def show
+   @chatroom = Chatroom.find(params[:id])
+ end
 
-#   def create
-#     @chatroom = Chatroom.find(params[:chatroom_id])
-#     @message = Message.new(message_params)
-#     @message.chatroom = @chatroom
-#     @message.user = current_user
-#     if @message.save
-#       redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
-#     else
-#       render "chatrooms/show"
-#     end
-#   end
+  def create
+    @chatroom = Chatroom.find(params[:chatroom_id])
+    @message = Message.new(message_params)
+    @message.chatroom = @chatroom
+    @message.user = current_user
+    if @message.save
+      redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
+    else
+      render "chatrooms/show"
+    end
+  end
 
-#   private
+  private
 
-#   def message_params
-#   params.require(:chatroom).permit(:name)
-#   end
-# end
+  def message_params
+  params.require(:chatroom).permit(:name)
+  end
+end
