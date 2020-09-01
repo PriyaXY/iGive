@@ -1,7 +1,9 @@
 <div class="container">
-    <div class="mx-auto">
-      <h1><%= "Welcome back, #{current_user.first_name}!" %></h1>
-      <h3><%= "#{current_user.email}" %></h3>
+    <div class="user-info">
+      <h1>Welcome back, <span><%= "#{current_user.first_name}" %></span></h1>
+      <div class="text-center">
+        <i class="far fa-envelope"></i> <%= "#{current_user.email}" %>
+      </div>
 
      <!--  <h2>Pick Your Avatar</h2>
        <%#= image_url: helpers.asset_url(AVALIA.jpg) class="img-thumbnail"%>
@@ -9,12 +11,9 @@
        <img src="LARSDONEIT.jpg" alt="avatar image" class="img-thumbnail">
        <img src="HELPERTRON.jpg" alt="avatar image" class="img-thumbnail">
  -->
+    </div>
 
-
-      <h2>Your interests</h2>
-
-
-
+    <div class="user-level">
       <% if  @volunteer_completed_missions.count < 5 %>
         <%= image_tag "heart.png", alt: "alttext", height: "300"  %>
          <%= "You are a valued contributor"  %>
@@ -30,7 +29,8 @@
         <p>How much further to go till you level up...</p>
         <%= render "shared/progress_bar", volunteer_completed_missions: @volunteer_completed_missions %>
       </div>
-   </div>
+    </div>
+
       <div class="mx-auto">
         <!-- summary box for:
           - x days left before next mission
@@ -38,7 +38,7 @@
          -->
       </div>
       <!-- view pending missions -->
-      <h3 class="mt-5 mb-3">My Pending Missions</h3>
+      <h3 class="mt-5 mb-3 text-center">My Pending Missions</h3>
 
       <div class="list-group">
         <% if @pending_volunteer_missions.any? %>
@@ -60,7 +60,7 @@
         <% end %>
       </div>
 
-      <h3 class="mt-5 mb-3">My Upcoming missions</h3>
+      <h3 class="mt-5 mb-3 text-center">My Upcoming missions</h3>
 
       <!-- Upcoming missions -->
       <div class="list-group">
@@ -81,7 +81,7 @@
         <% end %>
       </div>
 
-      <h3 class="mt-5 mb-3">My Completed missions</h3>
+      <h3 class="mt-5 mb-3 text-center">My Completed missions</h3>
 
        <!-- completed missions -->
        <div class="list-group">

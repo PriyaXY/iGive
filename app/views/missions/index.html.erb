@@ -10,7 +10,7 @@
 <% end %>
 
 
-<div class="container mb-5">
+<div class="container">
   <h1 class="my-4">Help needed! See all Missions </h1>
   <% @missions.order(start_date: :asc).each do |mission| %>
     <% if mission.start_date > Date.today %>

@@ -1,28 +1,44 @@
 <div class="container-progressbar">
+
+    <!-- progress bar - animated version  -->
+
     <% if @volunteer_completed_missions.count < 5  %>
        <% level = 'LEVEL 1' %>
+       <% level_score = '25%' %>
       <div class="badge-container">
         <div><%= image_tag("heart.png", height: '65', alt: "alttext")%> Novice</div>
         <div><%= image_tag("shield-first-time-user.png", height: '50', alt: "alttext")%>Intermediate</div>
       </div>
     <% elsif @volunteer_completed_missions.count < 10  %>
        <% level = 'LEVEL 2' %>
+       <% level_score = '50%' %>
        <div class="badge-container">
           <%= image_tag("shield-first-time-user.png", height: '50', alt: "alttext")%>
           <%= image_tag("shield-average.png", height: '65', alt: "alttext")%>
        </div>
     <% elsif @volunteer_completed_missions.count < 15  %>
       <% level = 'LEVEL 3' %>
+      <% level_score = '75%' %>
       <div class="badge-container">
         <%= image_tag "shield-average.png", height: '50', alt: "alttext" %>
         <%= image_tag "shield-super-user.png", height: '50', alt: "alttext" %>
       </div>
     <% else @volunteer_completed_missions.count > 15  %>
-       <div><%= image_tag "shield-super-user.png", height: '50', alt: "alttext" %></div>
-       <% level = 'LEVEL Hero' %>
+      <% level_score = '100%' %>
+      <div><%= image_tag "shield-super-user.png", height: '50', alt: "alttext" %></div>
+      <% level = 'LEVEL Hero' %>
     <% end %>
 
-    <% if [0, 5, 10].include?(@volunteer_completed_missions.count) %>
+
+    <div class="bar-container">
+      <div class="bar" data-width="<%= level_score %>">
+        <div class="bar-inner"></div>
+        <div class="bar-percent"><%= level_score %></div>
+      </div>
+    </div>
+
+
+<!--     <% if [0, 5, 10].include?(@volunteer_completed_missions.count) %>
     <div class="progress" style="height: 40px;">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><%= "#{level}" %></div>
     </div>
@@ -48,5 +64,7 @@
     <div class="progress" style="height: 40px;">
       <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><%= "#{level}" %></div>
     </div>
-  <% end %>
+  <% end %> -->
+
+
 </div>
