@@ -1,6 +1,5 @@
 <div class="container">
 
-
     <div class="user-info">
       <h1>Welcome back, <span><%= "#{current_user.first_name}" %></span></h1>
       <div class="text-center">
@@ -12,7 +11,7 @@
 
       <!-- Your Interests end here -->
 
-     <div class="user-level my-3 col-sm-12 col-md-12">
+    <div class="user-level my-3 col-sm-12 col-md-12">
 
       <div class="user-level-count col-sm-4 col-md-12">
         <p>You have completed</p>
@@ -59,14 +58,7 @@
       <%= image_tag "HELPERTRON.jpg", class: "avatar", alt: "alttext"%>
       <% end %>
     </div>
-      </div>
-   </div>
-      <div class="mx-auto">
-        <!-- summary box for:
-          - x days left before next mission
-          - mission completed
-         -->
-      </div>
+
       <!-- view pending missions -->
       <h3 class="mt-5 mb-3">My Pending Missions</h3>
 
@@ -115,7 +107,7 @@
 
       <h3 class="mt-5 mb-3 text-center">My Completed Missions</h3>
 
-      
+
        <!-- completed missions -->
        <div class="list-group">
           <% if @volunteer_completed_missions.any? %>
