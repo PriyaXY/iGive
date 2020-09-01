@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start(initChatroomCable)
+require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
@@ -40,5 +40,5 @@ document.addEventListener('turbolinks:load', () => {
 })
 
 
-import { initChatroomCable };
+// import { initChatroomCable };
 
