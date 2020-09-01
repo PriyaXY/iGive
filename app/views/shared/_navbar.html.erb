@@ -44,6 +44,10 @@
             </li>
             <% if user_signed_in? %>
             <li class="nav-item">
+              <i class="fas fa-comments"></i>
+              <%= link_to "My account", dashboard_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
               <i class="fas fa-user-circle"></i>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, remote: false, class: "nav-link" %>
             </li>
