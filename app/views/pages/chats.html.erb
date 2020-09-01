@@ -1,0 +1,12 @@
+<% if current_user.charity %>
+  <% current_user.booking_chatrooms.each do | chatroom | %>
+    <%= link_to chatroom.user.first_name, chatroom_path(chatroom) %>
+  <% end %>
+<% else %>
+  <% current_user.chatrooms.each do | chatroom | %>
+    <%= link_to chatroom.booking.mission.title, chatroom_path(chatroom) %>
+  <% end %>
+<% end %>
+
+
+

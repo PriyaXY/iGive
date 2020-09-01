@@ -14,6 +14,10 @@ class PagesController < ApplicationController
     redirect_to request.referer
   end
 
+  def chats
+
+  end
+
   def dashboard
     @charity = current_user.charity
     @pending_volunteer_missions = current_user.bookings.where(status: "pending").includes(:mission).where('missions.start_date > ?', Date.today).references(:mission)
