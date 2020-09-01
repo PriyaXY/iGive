@@ -8,6 +8,12 @@ class PagesController < ApplicationController
     #@completed_missions = @mission.where('start_date < ?', Date.today)
   end
 
+  def update_avatar
+    @user = current_user
+    @user.update(image: params[:image])
+    redirect_to request.referer
+  end
+
   def dashboard
     @charity = current_user.charity
     @pending_volunteer_missions = current_user.bookings.where(status: "pending").includes(:mission).where('missions.start_date > ?', Date.today).references(:mission)
