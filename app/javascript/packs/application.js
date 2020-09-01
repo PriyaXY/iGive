@@ -33,13 +33,22 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 });
 
+// skill bar in dashboard
+
+$(".bar").each(function(){
+    $(this).find(".bar-inner").animate({
+      width: $(this).attr("data-width")
+    },2000)
+});
+
+
+// mapbox
+
 import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
-
-
 
 // import { initChatroomCable };
 
