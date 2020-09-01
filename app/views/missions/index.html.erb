@@ -2,15 +2,15 @@
 <%# f.collection_check_boxes :category_ids, Mission::CATEGORIES, :id, :name %>
 <%# end %>
 
- <%= simple_form_for missions_path, method: :get do |f| %>
-   <%= f.input :category, as: :check_boxes, collection: Mission::CATEGORIES %>
-        <div class="form-actions">
-          <%= f.submit "Submit", class: "btn btn-rounded-sm btn-success" %>
-        </div>
-        <% end %>
+<%= simple_form_for missions_path, method: :get do |f| %>
+    <%= f.input :category, as: :check_boxes, collection: Mission::CATEGORIES, class: "check-list-box" %>
+  <div class="form-actions">
+      <%= f.submit "Submit", class: "btn btn-rounded-sm btn-success" %>
+  </div>
+<% end %>
 
 
-<div class="container">
+<div class="container mb-5">
   <h1 class="my-4">Help needed! See all Missions </h1>
   <% @missions.order(start_date: :asc).each do |mission| %>
     <% if mission.start_date > Date.today %>
@@ -43,6 +43,5 @@
       <% end %>
     <% end %>
   <% end %>
-  <%= link_to 'Home', root_path, class: "btn btn-rounded-sm btn-success"%>
 </div>
 
