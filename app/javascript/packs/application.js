@@ -23,32 +23,20 @@ require("channels")
 
 // External imports
 import "bootstrap";
-
-
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
-
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-});
-
+import { initMapbox } from '../plugins/init_mapbox';
+import { skillBar } from '../bar/skill_bar';
 // skill bar in dashboard
 
-$(".bar").each(function(){
-    $(this).find(".bar-inner").animate({
-      width: $(this).attr("data-width")
-    },2000)
-});
 
 
 // mapbox
 
-import { initMapbox } from '../plugins/init_mapbox';
-
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  skillBar();
+
 })
 
 // import { initChatroomCable };
+
 

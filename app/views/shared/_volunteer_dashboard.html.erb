@@ -7,47 +7,59 @@
       </div>
     </div>
 
-    <div class="user-level">
-    <div class="mx-auto">
-      <h1><%= "Welcome back, #{current_user.first_name}!" %></h1>
-      <h3><%= "#{current_user.email}" %></h3>
-      
-      <h2>Pick Your Avatar</h2>
-      <div class= "conatiner-2">
-        <%= link_to update_avatar_path(image:"AVALIA.jpg"), method: :post do %>
-        <%= image_tag "AVALIA.jpg", class: "avatar", alt: "alttext"%>
-        <% end %>
-         <%= link_to update_avatar_path(image:"ACHIVEACON.jpg"), method: :post do %>
-        <%= image_tag "ACHIVEACON.jpg", class: "avatar", alt: "alttext"%>
-        <% end %>
-        <%= link_to update_avatar_path(image:"LARSDONEIT.jpg"), method: :post do %>
-        <%= image_tag "LARSDONEIT.jpg", class: "avatar", alt: "alttext"%>
-        <% end %>
-        <%= link_to update_avatar_path(image:"HELPERTRON.jpg"), method: :post do %>
-        <%= image_tag "HELPERTRON.jpg", class: "avatar", alt: "alttext"%>
-        <% end %>
+      <!-- Your Interests section start here  -->
+
+      <!-- Your Interests end here -->
+
+     <div class="user-level my-3 col-sm-12 col-md-12">
+
+      <div class="user-level-count col-sm-4 col-md-12">
+        <p>You have completed</p>
+        <div class="user-level-count-total">
+          <%= @volunteer_completed_missions.count %>
         </div>
-        <br>
-        <br>
-      <h2>Your Interests TBC!!!!</h2>
-
-
-      <% if  @volunteer_completed_missions.count < 5 %>
-        <%= image_tag "heart.png", alt: "alttext", height: "300"  %>
-         <%= "You are a valued contributor"  %>
-        <% elsif @volunteer_completed_missions.count < 10 %>
-        <div class="big-badge"><%= image_tag "sheild-first-time-user.png", alt: "alttext"%></div>
-        <% elsif @volunteer_completed_missions.count <  15 %>
-         <div class="big-badge"><%= image_tag "shield-average.png", alt: "alttext" %></div>
-        <% else @volunteer_completed_missions.count >=  15 %>
-        <div class="big-badge"><%= image_tag "shield-super-user.png", alt: "alttext" %></div>
-      <% end %>
-
-      <div>
-        <p>How much further to go till you level up...</p>
-        <%= render "shared/progress_bar", volunteer_completed_missions: @volunteer_completed_missions %>
+        <span>missions</span>
+      </div>
+      <div class="user-level-badge col-sm-8 col-md-12">
+        <p>Your superhero status</p>
+        <% if  @volunteer_completed_missions.count < 5 %>
+            <%= image_tag "heart.png", alt: "alttext"  %>
+            <p><%= "Beginner"  %></p>
+          <% elsif @volunteer_completed_missions.count < 10 %>
+            <%= image_tag "sheild-first-time-user.png", alt: "alttext"%>
+            <p><%= "Intermediate"  %></p>
+          <% elsif @volunteer_completed_missions.count <  15 %>
+            <%= image_tag "shield-average.png", alt: "alttext" %>
+            <p><%= "Advanced"  %></p>
+          <% else @volunteer_completed_missions.count >=  15 %>
+            <%= image_tag "shield-super-user.png", alt: "alttext" %>
+            <p><%= "Superhero"  %></p>
+        <% end %>
       </div>
     </div>
+
+    <div class="user-level-bar mt-2">
+        <h4 class="my-4">Increase your superhero level with more missions</h4>
+        <%= render "shared/progress_bar", volunteer_completed_missions: @volunteer_completed_missions %>
+    </div>
+
+    <div class= "user-avatar my-3">
+       <h4>Pick Your Avatar</h4>
+      <%= link_to update_avatar_path(image:"AVALIA.jpg"), method: :post do %>
+      <%= image_tag "AVALIA.jpg", class: "avatar", alt: "alttext"%>
+      <% end %>
+       <%= link_to update_avatar_path(image:"ACHIVEACON.jpg"), method: :post do %>
+      <%= image_tag "ACHIVEACON.jpg", class: "avatar", alt: "alttext"%>
+      <% end %>
+      <%= link_to update_avatar_path(image:"LARSDONEIT.jpg"), method: :post do %>
+      <%= image_tag "LARSDONEIT.jpg", class: "avatar", alt: "alttext"%>
+      <% end %>
+      <%= link_to update_avatar_path(image:"HELPERTRON.jpg"), method: :post do %>
+      <%= image_tag "HELPERTRON.jpg", class: "avatar", alt: "alttext"%>
+      <% end %>
+    </div>
+
+
 
       <div class="mx-auto">
         <!-- summary box for:
@@ -78,7 +90,7 @@
         <% end %>
       </div>
 
-      <h3 class="mt-5 mb-3 text-center">My Upcoming missions</h3>
+      <h3 class="mt-5 mb-3 text-center">My Upcoming Missions</h3>
 
       <!-- Upcoming missions -->
       <div class="list-group">
@@ -99,7 +111,7 @@
         <% end %>
       </div>
 
-      <h3 class="mt-5 mb-3 text-center">My Completed missions</h3>
+      <h3 class="mt-5 mb-3 text-center">My Completed Missions</h3>
 
        <!-- completed missions -->
        <div class="list-group">

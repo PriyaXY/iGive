@@ -1,3 +1,21 @@
+.user-avatar{
+  text-align:center;
+  background: white;
+  border:solid 1px #ccc;
+  padding:0.8em ;
+  border-radius:1em;
+}
+
+.user-avatar h4{
+  margin-bottom:15px;
+}
+
+.user-avatar a{
+  display:inline-block;
+  overflow:hidden;
+  height:49px;
+}
+
 .avatar {
   width: 60px;
   height: 60px;
@@ -21,6 +39,5 @@
   border: white 1px solid;
 }
 
-.container-2{
-  border-radius: 40px;
-}
+
+
