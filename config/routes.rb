@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "/dashboard", to: "pages#dashboard", as: 'dashboard'
   get "accept_booking/:booking", to: "bookings#accept_booking", as: 'accept_booking'
   post "/update_avatar", to: "pages#update_avatar"
+  get "/chats", to: "pages#chats", as: 'chats'
 
   resources :charities, only: [:new, :create, :show, :edit, :update]
   resources :missions do
