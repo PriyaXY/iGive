@@ -9,39 +9,55 @@
   </div>
 <% end %>
 
+<!-- <div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2>Product name</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+  </div>
+</div> -->
 
 <div class="container mb-5">
   <h1 class="my-4">Help needed! See all Missions </h1>
   <% @missions.order(start_date: :asc).each do |mission| %>
-    <% if mission.start_date > Date.today %>
-      <% if mission.number_of_volunteers - mission.bookings.where(status: "accepted").count > 0 %>
-        <div class="card mb-3 p-2">
-          <div>
-            <%= render "shared/icon_count", mission: mission %>
-          </div>
-            <% if mission.start_date < (Date.today + 7) %>
+    <% if mission.start_date > Date.today && (mission.number_of_volunteers - mission.bookings.where(status: "accepted").count) > 0 %>
+        <div class="card mb-3 p-2, index-card-container">
+          <% if mission.photos.attached? %>
             <div>
-              <h2>URGENT styling here</h2>
+              <%= cl_image_tag mission.photos.first.key, class: "card-img-left" %>
+            </div>
+          <% else %>
+            <div class="index-image">
+              <%= image_tag "carousel-1.jpg", class: "card-img-left", height: "200" %>
             </div>
           <% end %>
           <div>
+            <div>
+              <%=link_to "#{mission.title}", mission_path(mission) %>
+            </div>
+             <div>
+              <%="Charity: #{mission.charity.name}"%>
+            </div>
+            <div>
+              <%="Location: #{mission.address}"%>
+            </div>
+            <div>
+              <%="Category: #{mission.category}"%>
+            </div>
+          </div>
+          <div>
+            <% if mission.start_date < (Date.today + 7) %>
+              <div class="urgent-style">
+                <h3>Urgent: Apply Now</h3>
+              </div>
+            <% end %>
               <%="Start date: #{mission.start_date.strftime('%d/%m/%Y')}"%>
           </div>
           <div>
-            <%=link_to "Mission: #{mission.title}", mission_path(mission) %>
-          </div>
-          <div>
-            <%="Charity: #{mission.charity.name}"%>
-          </div>
-          <div>
-            <%="Location: #{mission.address}"%>
-          </div>
-          <div>
-            <%="Category: #{mission.category}"%>
+            <%= render "shared/icon_count", mission: mission %>
           </div>
         </div>
       <% end %>
-    <% end %>
   <% end %>
 </div>
 
