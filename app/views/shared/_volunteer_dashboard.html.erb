@@ -2,17 +2,25 @@
     <div class="mx-auto">
       <h1><%= "Welcome back, #{current_user.first_name}!" %></h1>
       <h3><%= "#{current_user.email}" %></h3>
-
-     <!--  <h2>Pick Your Avatar</h2>
-       <%#= image_url: helpers.asset_url(AVALIA.jpg) class="img-thumbnail"%>
-       <img src="ACHIEVEACON.jpg" alt="avatar image" class="img-thumbnail">
-       <img src="LARSDONEIT.jpg" alt="avatar image" class="img-thumbnail">
-       <img src="HELPERTRON.jpg" alt="avatar image" class="img-thumbnail">
- -->
-
-
-      <h2>Your interests</h2>
-
+      
+      <h2>Pick Your Avatar</h2>
+      <div class= "conatiner-2">
+        <%= link_to update_avatar_path(image:"AVALIA.jpg"), method: :post do %>
+        <%= image_tag "AVALIA.jpg", class: "avatar", alt: "alttext"%>
+        <% end %>
+         <%= link_to update_avatar_path(image:"ACHIVEACON.jpg"), method: :post do %>
+        <%= image_tag "ACHIVEACON.jpg", class: "avatar", alt: "alttext"%>
+        <% end %>
+        <%= link_to update_avatar_path(image:"LARSDONEIT.jpg"), method: :post do %>
+        <%= image_tag "LARSDONEIT.jpg", class: "avatar", alt: "alttext"%>
+        <% end %>
+        <%= link_to update_avatar_path(image:"HELPERTRON.jpg"), method: :post do %>
+        <%= image_tag "HELPERTRON.jpg", class: "avatar", alt: "alttext"%>
+        <% end %>
+        </div>
+        <br>
+        <br>
+      <h2>Your Interests TBC!!!!</h2>
 
 
       <% if  @volunteer_completed_missions.count < 5 %>

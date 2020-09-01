@@ -7,7 +7,7 @@
             <span style="font-size:12px; display:block; line-height: 0em;">Be a local hero</span></div>
         </div>
         <% end %>
-
+        <div class="d-flex align-items-center">
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
@@ -27,6 +27,10 @@
             <% end %>
           </ul>
         </div>
+          <% if user_signed_in? && current_user.image %>
+           <%= image_tag current_user.image, class: "avatar ml-2", alt: "alttext"%>
+           <% end %>
+         </div>
     </div>
   </div>
 
