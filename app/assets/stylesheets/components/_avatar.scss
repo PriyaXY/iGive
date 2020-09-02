@@ -20,7 +20,6 @@
   width: 60px;
   height: 60px;
   border-radius: 30%;
-  // border: solid 2px black;
 }
 .avatar-large {
   width: 56px;
@@ -37,6 +36,33 @@
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+}
+
+/* shown on top navbar - all pages */
+
+
+.avatar-navbar{
+
+  text-align:right;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+  align-items:center;
+  font-size:0.9em;
+}
+
+.avatar-navbar-wrap{
+  overflow:hidden;
+  height:45px;
+}
+
+.avatar-navbar img{
+  width:52px;
+}
+
+.message-navbar{
+  text-align:center;
+  margin-right:6px;
 }
 
 

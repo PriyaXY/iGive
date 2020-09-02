@@ -1,4 +1,4 @@
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon mb-5">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <div class="container">
 
         <%= link_to root_path, class: "navbar-brand" do %>
@@ -29,7 +29,10 @@
           </ul>
         </div>
           <% if user_signed_in? && current_user.image %>
-           <%= image_tag current_user.image, class: "avatar ml-2", alt: "alttext"%>
+           <div class="avatar-navbar">
+              <div class="message-navbar">Hi, <strong><%= "#{current_user.first_name}" %></strong></div>
+              <div class="avatar-navbar-wrap"><%= image_tag current_user.image, alt: "alttext"%></div>
+           </div>
            <% end %>
          </div>
     </div>
