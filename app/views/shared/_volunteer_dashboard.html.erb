@@ -113,9 +113,9 @@
           <% if @volunteer_completed_missions.any? %>
           <% @volunteer_completed_missions.each do |booking|%>
           <div class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="w-100 dashboard ">
-              <h5 class="mt-2 mb-2 mission-title"><%= booking.mission.title %></h5>
-              <small>Charity: <%= booking.mission.charity.name %></small>
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mt-2 mb-2 mission-title"> <i class="fas fa-check-square"></i> <%= booking.mission.title %></h5>
+              <small><%= booking.mission.charity.name %></small>
             </div>
           </div>
         <% end %>
