@@ -9,7 +9,10 @@
     <div class="index-card-text">
       <div class="index-card-main-info">
         <ul>
-          <li><%=link_to "#{mission.title}", mission_path(mission) %></li>
+          <li><%=link_to mission_path(mission) do %>
+            <p><%=mission.title%></p>
+            <% end %>
+          </li>
           <li><%="Charity: #{mission.charity.name}"%></li>
           <li><%="Location: #{mission.address}"%></li>
           <li><%="Category: #{mission.category}"%></li>
@@ -21,7 +24,7 @@
             <%= simple_form_for [mission, Booking.new] do |f| %>
               <%= f.button :submit, 'URGENT: Apply Now', class: "btn btn-rounded-sm btn-success, warning" %>
             <% end %>
-          <% elsif @mission.users.include?(current_user) %>
+          <% elsif mission.users.include?(current_user) %>
             <%= link_to 'See Your Mission Application', dashboard_path, class: "btn btn-rounded-sm btn-success, index-card-button"%>
           <% end %>
         </div>
