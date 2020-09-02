@@ -13,7 +13,7 @@ class Mission < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-  CATEGORIES = ['Children', 'Environment', 'Food', 'Animals', 'Health' 'Women', 'Admin', 'Retail']
+  CATEGORIES = ['Children', 'Environment', 'Food', 'Animals', 'Health', 'Women', 'Admin', 'Retail']
 
   scope :filter_by_category, -> (category_array) { where category: category_array }
 
