@@ -2,66 +2,26 @@
 <%# f.collection_check_boxes :category_ids, Mission::CATEGORIES, :id, :name %>
 <%# end %>
 
-<%= simple_form_for missions_path, method: :get do |f| %>
-    <%= f.input :category, as: :check_boxes, collection: Mission::CATEGORIES, class: "check-list-box" %>
-  <div class="form-actions">
-      <%= f.submit "Submit", class: "btn btn-rounded-sm btn-info" %>
-  </div>
-<% end %>
+
 
 <div class="container">
+  <div class="category-container">
+    <%= simple_form_for missions_path, method: :get do |f| %>
+      <%= f.input :category, as: :check_boxes, collection: Mission::CATEGORIES, class: "check-list-box" %>
+      <div class="form-actions">
+        <%= f.submit "Submit", class: "btn btn-rounded-sm btn-info" %>
+      </div>
+    <% end %>
+  </div>
   <h1 class="my-4"></h1>
   <% @missions.order(start_date: :asc).each do |mission| %>
     <% if mission.start_date > Date.today && (mission.number_of_volunteers - mission.bookings.where(status: "accepted").count) > 0 %>
       <% if mission.start_date < (Date.today + 7) %>
-          <div class="index-card-container-urgent">
-      <% elsif %>
-          <div class="index-card-container">
+          <%= render "shared/index_card_urgent", mission: mission %>
+      <% else %>
+          <%= render "shared/index_card", mission: mission %>
       <% end %>
-          <div class="index-card-image">
-            <% if mission.photos.attached? %>
-              <%= cl_image_tag mission.photos.first.key %>
-            <% else %>
-              <%= image_tag "carousel-1.jpg" %>
-            <% end %>
-          </div>
-          <div class="index-card-text">
-            <div class="index-card-main-info">
-            <ul>
-              <li><%=link_to "#{mission.title}", mission_path(mission) %></li>
-              <li><%="Charity: #{mission.charity.name}"%></li>
-              <li><%="Location: #{mission.address}"%></li>
-              <li><%="Category: #{mission.category}"%></li>
-            </ul>
-            </div>
-            <% if mission.start_date < (Date.today + 7) %>
-                <div class="index-card-extra-info-urgent">
-                  <% if current_user.charity.blank? && !mission.users.include?(current_user)%>
-                    <%= simple_form_for [mission, Booking.new] do |f| %>
-                      <%= f.button :submit, 'URGENT: Apply Now', class: "btn btn-rounded-sm btn-success, warning" %>
-                    <% end %>
-                <% elsif @mission.users.include?(current_user) %>
-                  <%= link_to 'See Your Mission Application', dashboard_path, class: "btn btn-rounded-sm btn-success, index-card-button"%>
-                <% end %>
-            <% elsif %>
-                  <div class="index-card-extra-info">
-                  <% if current_user.charity.blank? && !mission.users.include?(current_user)%>
-                    <%= simple_form_for [mission, Booking.new] do |f| %>
-                      <%= f.button :submit, 'Apply Now', class: "btn btn-rounded-sm btn-info" %>
-                    <% end %>
-                  <% elsif mission.users.include?(current_user) %>
-                    <%= link_to 'See Your Mission Application', dashboard_path, class: "btn btn-rounded-sm btn-info"%>
-                  <% end %>
-             <% end %>
-              <%="Start date: #{mission.start_date.strftime('%d/%m/%Y')}"%>
-              <div class="counter-icon">
-                <%= render "shared/icon_count", mission: mission %>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      <% end %>
+    <% end %>
   <% end %>
 </div>
 
