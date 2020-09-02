@@ -1,0 +1,21 @@
+#messages {
+  font-family: sans-serif;
+  color: #D54062;
+}
+
+.message-container{
+  border: solid lightgrey 3px;
+  box-shadow: 5px 10px;
+}
+
+.author{
+  color: #799351;
+}
+
+.btn-message{
+  background-color:#EBDC87;
+  border-radius: 40px;
+  color: white;
+  border: none;
+  transition: all 0.3s ease 0s;
+}

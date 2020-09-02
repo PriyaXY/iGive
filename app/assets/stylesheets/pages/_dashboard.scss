@@ -25,7 +25,8 @@
 }
 
 .user-level-badge img{
-  width:80px;
+  width: 60px;
+  margin-bottom: 10px;
 }
 
 .user-level-bar{
@@ -50,12 +51,33 @@
 }
 
 .user-level-count-total{
-  font-size:4em;
-  color:#FFA36C;
+  font-size: 5em;
+  color: #FFA36C;
   font-weight: bolder;
+  height: 95px;
+  line-height: 1.3em;
 }
 
 .user-level-count span{
   color:#FFA36C;
 }
+
+/* mission section styling */
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .section-heading{
+    font-size:1.3em;
+    text-align:center;
+  }
+
+  .dashboard .mission-title{
+    font-size:1.1em;
+    color:#799351;
+    font-weight:bold;
+  }
+}
+
+
+
+
 
