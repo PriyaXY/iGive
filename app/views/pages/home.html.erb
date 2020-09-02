@@ -3,7 +3,7 @@
 <!-- end carousel -->
   <div class="container-fluid bg-white py-5">
     <div class="container my-4 text-center">
-      <h1 class="my-5 home-heading">Help your community and become a hero today</h1>
+      <h1 class="my-5 home-heading">Help your community and become a <strong>hero</strong> today</h1>
       <p><%= image_tag "animated-igive-logo-infinite.gif", height: '200px' %></p>
       <%= link_to 'See all missions', missions_path, class: "btn btn-sm btn-success btn-rounded btn-lg"%>
     </div>
@@ -12,7 +12,7 @@
   <div class="container-fluid search-box">
       <div class="container-search-bar my-5 col-12 col-md-8 ">
         <form action="/missions" method="get">
-          <label class="search-label">Find nearest charity missions</label>
+          <label class="search-label">Find a mission in your neighbourhood</label>
           <div class="input-group md-form form-sm form-2 pl-0">
             <input class="form-control my-0 py-3 red-border w-50" type="text" autocomplete="on" placeholder="local neighbourhood.." name="query" aria-label="Search">
             <input class="form-control my-0 py-3 red-border " name="distance" placeholder="km radius..">

@@ -2,36 +2,36 @@
   <div class="index-card-container-urgent">
     <div class="index-card-image">
       <% if mission.photos.attached? %>
-        <%= cl_image_tag mission.photos.first.key %>
+        <%= cl_image_tag mission.photos.first.key, class: "card-image" %>
       <% else %>
-        <%= image_tag "carousel-1.jpg" %>
+        <%= image_tag "carousel-1.jpg", class: "card-image" %>
       <% end %>
     </div>
-      <div class="index-card-text">
-        <div class="index-card-main-info-urgent">
-            <div>
-              <h3><%="#{mission.title}"%></h3>
-            </div>
-            <div>
-              <p><%="with: #{mission.charity.name.capitalize}"%></p>
-            </div>
-            <div>
-              <p><%="on: #{mission.start_date.strftime('%d/%m/%Y')}"%></p>
-            </div>
-            <div class="index-icon">
-              <%= render "shared/icon_count", mission: mission %>
-            </div>
-          <div class="mx-2 index-urgent-button">
-            <% if current_user.charity.blank? && !mission.users.include?(current_user)%>
-              <%= simple_form_for [mission, Booking.new] do |f| %>
-                <%= f.button :submit, 'URGENT: Apply Now', class: "btn btn-rounded-sm btn-success, warning my-2" %>
-              <% end %>
-            <% elsif mission.users.include?(current_user) %>
-              <%= link_to 'See Your Mission Application', dashboard_path, class: "btn btn-rounded-sm btn-success, index-card-button"%>
+    <div class="index-card-text">
+      <div class="index-card-main-info-urgent">
+        <div class="text-card-pink">
+          <h3><%="#{mission.title}"%></h3>
+        </div>
+        <div class="text-card-pink">
+          <p><%="with: #{mission.charity.name.capitalize}"%></p>
+        </div>
+        <div class="text-card-pink">
+          <p><%="on: #{mission.start_date.strftime('%d/%m/%Y')}"%></p>
+        </div>
+        <div class="index-icon">
+          <%= render "shared/icon_count", mission: mission %>
+        </div>
+        <div class="index-urgent-button">
+          <% if current_user.charity.blank? && !mission.users.include?(current_user)%>
+            <%= simple_form_for [mission, Booking.new] do |f| %>
+              <%= f.button :submit, 'URGENT: Apply Now', class: "btn btn-rounded-sm btn-success warning my-2" %>
             <% end %>
-          </div>
+          <% elsif mission.users.include?(current_user) %>
+            <%= link_to 'See Your Application', dashboard_path, class: "btn btn-rounded-sm btn-success index-card-button"%>
+          <% end %>
         </div>
       </div>
+    </div>
   </div>
 <% end %>
 
