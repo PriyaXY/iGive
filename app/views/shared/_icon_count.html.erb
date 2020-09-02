@@ -1,23 +1,23 @@
 <% if mission.number_of_volunteers <= 5 %>
   <% mission.bookings.where(status: "accepted").count.times do%>
-     <i class="fas fa-user-check fa-3x"></i>
+     <i class="fas fa-user-check fa-2x"></i>
   <% end %>
   <% (mission.number_of_volunteers - mission.bookings.where(status: "accepted").count).times do %>
-   <i class="fas fa-user fa-3x"></i>
+   <i class="fas fa-user fa-2x"></i>
   <% end %>
 <% elsif mission.number_of_volunteers > 5 %>
   <% if mission.bookings.where(status: "accepted").count <=5 %>
     <% mission.bookings.where(status: "accepted").count.times do%>
-     <i class="fas fa-user-check fa-3x"></i>
+     <i class="fas fa-user-check fa-2x"></i>
     <% end %>
     <% (4 - mission.bookings.where(status: "accepted").count).times do%>
-      <i class="fas fa-user fa-3x"></i>
+      <i class="fas fa-user fa-2x"></i>
     <% end %>
-    <i class="fas fa-user-plus fa-3x"></i>
+    <i class="fas fa-user-plus fa-2x"></i>
   <% elsif mission.bookings.where(status: "accepted").count > 5 %>
     <% 4.times do %>
-      <i class="fas fa-user-check fa-3x"></i>
+      <i class="fas fa-user-check fa-2x"></i>
     <% end %>
-      <i class="fas fa-user-plus fa-3x"><% mission.number_of_volunteers - mission.bookings.where(status: "accepted").count%> volunteers needed left!</i> %></i>
+      <i class="fas fa-user-plus fa-2x"><% mission.number_of_volunteers - mission.bookings.where(status: "accepted").count%> volunteers needed left!</i> %></i>
   <% end %>
 <% end %>

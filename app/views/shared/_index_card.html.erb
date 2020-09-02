@@ -1,0 +1,36 @@
+<div class="index-card-container">
+  <div class="index-card-image">
+    <% if mission.photos.attached? %>
+      <%= cl_image_tag mission.photos.first.key %>
+    <% else %>
+      <%= image_tag "carousel-1.jpg" %>
+    <% end %>
+  </div>
+    <div class="index-card-text">
+      <div class="index-card-main-info">
+        <ul>
+          <li><h2><%=link_to "#{mission.title}", mission_path(mission) %></h2></li>
+          <li><%="Charity: #{mission.charity.name}"%></li>
+          <li><%="Location: #{mission.address}"%></li>
+          <li><%="Category: #{mission.category}"%></li>
+        </ul>
+      </div>
+      <div class="index-card-extra-info">
+        <div class="mx-2 index-apply-button">
+          <% if current_user.charity.blank? && !mission.users.include?(current_user)%>
+            <%= simple_form_for [mission, Booking.new] do |f| %>
+              <%= f.button :submit, 'Apply Now', class: "btn btn-rounded-sm btn-info" %>
+            <% end %>
+          <% elsif mission.users.include?(current_user) %>
+            <%= link_to 'See Your Application', dashboard_path, class: "btn btn-rounded-sm btn-info"%>
+          <% end %>
+        </div>
+        <div>
+          <%="Start date: #{mission.start_date.strftime('%d/%m/%Y')}"%>
+        </div>
+        <div class="index-icon">
+          <%= render "shared/icon_count", mission: mission %>
+        </div>
+      </div>
+    </div>
+</div>
