@@ -58,13 +58,29 @@
   .nav-item a{
     color:#fff;
     padding-top:0;
+    padding-bottom:0;
     text-align:center;
+  }
+
+  .nav-item p{
+    margin-bottom:0;
   }
 
   .footer-mobile-navbar i.fas, .footer-mobile-navbar i.far{
     color:white;
     padding-right:6px;
     font-size:2em;
+    line-height:0.8em;
+  }
+
+  .avatar-navbar{
+    margin-right:5px;
+    width:200px;
+    text-align:right;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
   }
 
 }
