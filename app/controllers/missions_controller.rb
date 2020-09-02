@@ -37,6 +37,7 @@ class MissionsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { mission: mission })
       }
     end
+
     if params[:query].nil? || (params[:query] == "")
       @missions = Mission.all
     elsif params[:distance].nil? || (params[:distance] == "")
@@ -46,6 +47,8 @@ class MissionsController < ApplicationController
     else
       @missions = @missions.near(params[:query], params[:distance].to_i)
     end
+
+
     if params['/missions']
       index_params
     @missions = @missions.where(category: params['/missions'][:category] )
