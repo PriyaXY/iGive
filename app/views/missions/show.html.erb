@@ -56,7 +56,7 @@
         <div class="mission-list-action-button">
           <% if current_user.charity.blank? && !@mission.users.include?(current_user)%>
           <%= simple_form_for [@mission, Booking.new] do |f| %>
-            <%= f.button :submit, 'Apply Now', class:"btn btn-sm btn-primary" %>
+            <%= f.button :submit, 'Apply Now', class:"btn btn-rounded-sm btn-success" %>
           <% end %>
           <% elsif @mission.users.include?(current_user) %>
             <%= link_to 'See your Application', dashboard_path, class: "btn btn-rounded-sm btn-success"%>
@@ -78,7 +78,7 @@
 
  <div class="card my-4">
     <div id="collapseOne" class="collapse">
-      <div class="card-body">
+      <div class="card-body collapse-body">
         <ul class="list-group">
               <li class="list-label">Description:</li>
                 <li class="list-content"><span class="text-secondary"><%= @charity.description %></span></li>
