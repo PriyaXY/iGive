@@ -40,9 +40,29 @@
 
 /* shown on top navbar - all pages */
 
+
 .avatar-navbar{
+
+  text-align:right;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+  align-items:center;
+  font-size:0.9em;
+}
+
+.avatar-navbar-wrap{
   overflow:hidden;
-  height:49px;
+  height:45px;
+}
+
+.avatar-navbar img{
+  width:52px;
+}
+
+.message-navbar{
+  text-align:center;
+  margin-right:6px;
 }
 
 
