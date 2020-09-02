@@ -51,6 +51,13 @@
   font-size: 16px;
   color: #799351;
   font-style: bold;
+  overflow: hidden;
+  & p {
+    width: 180px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 }
 .index-card-extra-info-urgent {
   display: flex;
@@ -78,4 +85,9 @@
   font-size: 12px;
   margin-bottom: 8px;
   margin-right: 2px;
+}
+
+.missioncategoryselection .collection_check_boxes {
+  margin-left: 8px;
+  width: 120px;
 }
