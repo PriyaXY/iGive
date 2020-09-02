@@ -26,77 +26,72 @@
     </div>
   <% end %>
 
-<div class="container">
-<h1 class="my-4">The Mission </h1>
-  <div class="d-flex flex-row bd-highlight mb-3">
-     <div class="p-2 bd-highlight">
-      <div class="card mb-3">
-        <div class="card-body">
+<!-- carousel end -->
+
+<div class="container mission-list">
+<h1>
+  <% if @mission.users.include?(current_user) %>
+    <span class="already-applied"><i class="fas fa-check-circle"></i> applied</span>
+  <% end %><br>
+  <%= @mission.title.capitalize %>
+</h1>
+  <div class="d-flex flex-row bd-highlight ">
+     <div class=" bd-highlight">
+      <div class="card border mb-3">
+        <div class="card-body py-2">
           <ul class="list-group">
-          <table class="table table-borderless table-sm">
-              <tr>
-                <td>Title:</td>
-                <td><span class="text-secondary"><%= @mission.title %></span></td>
-              </tr>
-              <tr>
-                <td>Start Date:</td>
-                <td><span class="text-secondary"><%= @mission.start_date.strftime('%d/%m/%Y') %></span></td>
-              </tr>
-              <tr>
-                <td>Description:</td>
-                <td><span class="text-secondary"><%= @mission.description %></span></td>
-              </tr>
-              <tr>
-                <td>Address:</td>
-                <td><span class="text-secondary"><%= @mission.address %></span></td>
-              </tr>
-               <tr>
-                <td>Volunteers Needed: </td><% mission = @mission %>
-                <td><span><%= render "shared/icon_count", mission: mission %></span></td>
-              </tr>
-          </table>
-        </ul>
+            <li class="list-label">Start Date:</li>
+              <li class="list-content"><span class="text-secondary"><%= @mission.start_date.strftime('%d/%m/%Y') %></span></li>
+            <li class="list-label">Address:</li>
+              <li class="list-content"><span class="text-secondary"><%= @mission.address %></span></li>
+            <li class="list-label">Volunteers Needed: </td><% mission = @mission %>
+              <li class="list-content"><span><%= render "shared/icon_count", mission: mission %></span></li>
+            <li class="list-label">Description:</li>
+              <li class="list-content"><span class="text-secondary"><%= @mission.description %></span></li>
+            <li class="list-label">Posted by:</li>
+              <li class="list-content"><span class="text-secondary"><%= @charity.name%></li>
+          </ul>
        </div>
+        <div class="mission-list-action-button">
+          <% if current_user.charity.blank? && !@mission.users.include?(current_user)%>
+          <%= simple_form_for [@mission, Booking.new] do |f| %>
+            <%= f.button :submit, 'Apply Now', class:"btn btn-sm btn-primary" %>
+          <% end %>
+          <% elsif @mission.users.include?(current_user) %>
+            <%= link_to 'See your Application', dashboard_path, class: "btn btn-rounded-sm btn-success"%>
+          <% end %>
+        </div>
       </div>
      </div>
    </div>
-<% if current_user.charity.blank? && !@mission.users.include?(current_user)%>
-  <%= simple_form_for [@mission, Booking.new] do |f| %>
-    <%= f.button :submit, 'Apply Now', class:"btn btn-sm btn-primary" %>
-  <% end %>
-<% elsif @mission.users.include?(current_user) %>
-  <%= link_to 'See Your Mission Application', dashboard_path, class: "btn btn-rounded-sm btn-success"%>
-<% end %>
-<%= link_to 'Back to missions', missions_path, class: "btn btn-rounded-sm btn-info"%>
+
+  <div class="mission-list-action-button-secondary">
+    <div class="back-button">
+      <i class="fas fa-arrow-circle-left"></i> <%= link_to 'Back to missions', missions_path %>
+    </div>
+  <div class="back-button">
+    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+          <i class="fa"></i> Learn more about this charity.
+    </a>
+  </div>
 
  <div class="card my-4">
-    <div class="card-header">
-      <a class="card-link" data-toggle="collapse" href="#collapseOne">
-        <i class="fa"></i> More info. about <%= @charity.name%>
-      </a>
-    </div>
     <div id="collapseOne" class="collapse">
       <div class="card-body">
         <ul class="list-group">
-          <table class="table table-borderless table-sm">
-              <tr>
-                <td>Description:</td>
-                <td><span class="text-secondary"><%= @charity.description %></span></td>
-              </tr>
-              <tr>
-                <td>Phone Number:</td>
-                <td><span class="text-secondary"><%= @charity.phone_number%></span></td>
-              </tr>
-              <tr>
-                <td>Website:</td>
-                <td><span class="text-secondary"><%= @charity.website %></span></td>
-              </tr>
-          </table>
+              <li class="list-label">Description:</li>
+                <li class="list-content"><span class="text-secondary"><%= @charity.description %></span></li>
+              <li class="list-label">Phone Number:</li>
+                <li class="list-content"><span class="text-secondary"><%= @charity.phone_number%></span></li>
+              <li class="list-label">Website:</li>
+                <li class="list-content"><span class="text-secondary">
+                  <a href="<%= @charity.website %>"><%= @charity.website %></a>
+                </li>
         </ul>
       </div>
     </div>
   </div>
-  <p><strong>Location</strong></p>
+  <h2>Location</h2>
 
       <div id="map" style="width: 100%; height: 50vh;"
            data-markers="<%= @markers.to_json %>"
