@@ -14,14 +14,13 @@
 }
 
 #messages {
-  padding: 0 1rem;
   padding-top: 1rem;
   overflow: scroll;
   max-height: calc(100vh - 70px - 65px - 71px);
 }
 
 #new_message {
-  padding: 1rem;
+  padding: 0;
   border-top: 1px solid $gray-200;
 
   .form-group {
@@ -29,6 +28,3 @@
   }
 }
 
-.btn-message{
-  background-color:#EBDC87;
-}

@@ -1,0 +1,43 @@
+.chat{
+  min-height:50vh;
+}
+
+.chat h1{
+  font-size:1.5em;
+}
+
+.chat ul{
+  padding-left:0;
+}
+
+.chat .mission-chat{
+  color:#799351 ;
+  list-style:none;
+  font-size:1em;
+
+}
+
+.chat .mission-chat a{
+  color:#799351;
+  text-decoration: none;
+
+}
+
+.chat-button{
+  width:30%;
+  margin-top:6px;
+  border:none;
+  border-radius: 30px;
+  transition: all 0.3s ease 0s;
+  padding: 0.5em 0.5em;
+  font-size: 1em;
+}
+
+.chat .message-container{
+  background:#fff;
+  padding:5px 12px;
+  margin-bottom:10px;
+  border-radius:0.9em;
+}
+
+
