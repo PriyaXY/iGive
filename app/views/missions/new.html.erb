@@ -10,7 +10,7 @@
           <%= f.input :address %>
           <%= f.input :category, :collection => ['Children', 'Environment', 'Food', 'Animals', 'Women', 'Admin', 'Retail'] %>
           <%= f.input :number_of_volunteers %>
-          <%= f.input :photos, input_html: {multiple: true}, as: :file, :label => "Upload boat photos",class: "btn btn-primary" %>
+          <%= f.input :photos, input_html: {multiple: true}, as: :file, :label => "Upload photos",class: "btn btn-primary" %>
         </div>
         <div class="form-actions">
           <%= f.submit "Submit", class: "btn btn-info btn-warning" %>
