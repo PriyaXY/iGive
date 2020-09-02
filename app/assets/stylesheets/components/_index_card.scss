@@ -1,7 +1,7 @@
 
 .index-card-container {
   overflow: hidden;
-  height: 130px;
+  height: 200px;
   width: 100%;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -13,7 +13,7 @@
 
 .index-card-container-urgent {
   overflow: hidden;
-  height: 130px;
+  height: 180px;
   width: 100% ;
   background: white;
   box-shadow: 0 0 10px #D54062;
@@ -23,17 +23,15 @@
   margin: 8px auto;
   font-size: 10px;
 }
-.index-card-container img {
-  height: 100%;
-  width: 100px;
-  object-fit: cover;
+.index-card-image {
+  width: 200px;
+  & img {
+    height: 100%;
+    width: 150px;
+    object-fit: cover;
+  }
 }
 
-.index-card-container-urgent img {
-  height: 100%;
-  width: 100px;
-  object-fit: cover;
-}
 
 .index-card-text {
   display: flex;
@@ -72,7 +70,7 @@
 }
 
 .index-icon {
-  margin-top: 32px;
+  margin-top: 8px;
 }
 
 .index-apply-button {
@@ -87,7 +85,3 @@
   margin-right: 2px;
 }
 
-.missioncategoryselection .collection_check_boxes {
-  margin-left: 8px;
-  width: 120px;
-}
