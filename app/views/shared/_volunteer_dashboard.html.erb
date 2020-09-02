@@ -67,9 +67,9 @@
         <% @pending_volunteer_missions.each do |booking| %>
          <div class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="w-100 dashboard ">
-                <div class="warning"><%= (Date.today..booking.mission.start_date).count %> days left!</div>
-                <h5 class="mt-2 mb-2 mission-title text-left">
-                  <%= link_to "#{booking.mission.title}", mission_path(booking.mission) %>
+                <div class="warning"><i class="fas fa-running"></i> <%= (Date.today..booking.mission.start_date).count %> days left!</div>
+                <h5 class="mt-2 mb-2 mission-title mission-pending text-left">
+                  <%= link_to "#{booking.mission.title.capitalize}", mission_path(booking.mission) %>
                 </h5>
                 <small>Charity: <%= booking.mission.charity.name %></small>
             </div>
@@ -91,8 +91,8 @@
         <% @accepted_volunteer_missions.each do |booking| %>
         <div class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="w-100 dashboard ">
-              <div class="warning"><%= (Date.today..booking.mission.start_date).count %> days left!</div>
-               <h5 class="mt-2 mb-2 mission-title"><%= link_to "#{booking.mission.title}", mission_path(booking.mission) %></h5>
+              <div class="warning-2"> <i class="fas fa-running"></i> <%= (Date.today..booking.mission.start_date).count %> days left!</div>
+               <h5 class="mt-2 mb-2 mission-title mission-upcoming"><%= link_to "#{booking.mission.title.capitalize}", mission_path(booking.mission) %></h5>
                <small>Charity: <%= booking.mission.charity.name %></small>
             </div>
           </div>
@@ -112,10 +112,10 @@
        <div class="list-group">
           <% if @volunteer_completed_missions.any? %>
           <% @volunteer_completed_missions.each do |booking|%>
-          <div class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mt-2 mb-2 mission-title"> <i class="fas fa-check-square"></i> <%= booking.mission.title %></h5>
-              <small><%= booking.mission.charity.name %></small>
+          <div class="list-group-item list-group-item-action flex-column align-items-start d-flex">
+            <div class="w-100 dashboard">
+              <h5 class="mt-2 mb-2 mission-title mission-completed"> <%= booking.mission.title.capitalize %></h5>
+              <small>Charity: <%= booking.mission.charity.name %></small>
             </div>
           </div>
         <% end %>
