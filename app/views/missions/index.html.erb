@@ -35,9 +35,9 @@
     <% @missions.order(start_date: :asc).each do |mission| %>
       <% if mission.start_date > Date.today && (mission.number_of_volunteers - mission.bookings.where(status: "accepted").count) > 0 %>
         <% if mission.start_date < (Date.today + 7) %>
-            <%= render "shared/index_card_urgent", mission: mission %>
+          <%= render "shared/index_card_urgent", mission: mission %>
         <% else %>
-            <%= render "shared/index_card", mission: mission %>
+          <%= render "shared/index_card", mission: mission %>
         <% end %>
       <% end %>
     <% end %>
