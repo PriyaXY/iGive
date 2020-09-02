@@ -23,17 +23,15 @@
   margin: 8px auto;
   font-size: 10px;
 }
-.index-card-container img {
-  height: 100%;
-  width: 100px;
-  object-fit: cover;
+.index-card-image {
+  width: 200px;
+  & img {
+    height: 100%;
+    width: 150px;
+    object-fit: cover;
+  }
 }
 
-.index-card-container-urgent img {
-  height: 100%;
-  width: 100px;
-  object-fit: cover;
-}
 
 .index-card-text {
   padding-bottom: 8px;
@@ -89,7 +87,3 @@
   margin-right: 2px;
 }
 
-.missioncategoryselection .collection_check_boxes {
-  margin-left: 8px;
-  width: 120px;
-}
