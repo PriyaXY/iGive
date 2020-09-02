@@ -22,7 +22,7 @@
               <%= f.button :submit, 'URGENT: Apply Now', class: "btn btn-rounded-sm btn-success, warning" %>
             <% end %>
 
-          <% elsif mission.include?(current_user) %>
+          <% elsif mission.user.include?(current_user) %>
 
             <%= link_to 'See Your Mission Application', dashboard_path, class: "btn btn-rounded-sm btn-success, index-card-button"%>
           <% end %>
