@@ -37,30 +37,39 @@
 
   <!-- mobile only below-->
 
-
   <div class="footer-mobile-navbar fixed-bottom" >
         <ul class="navbar-nav">
             <li class="nav-item">
+              <%= link_to root_path, class: "nav-link" do %>
               <i class="fas fa-home"></i>
-              <%= link_to "Home", root_path, class: "nav-link" %>
+              <p>Home</p>
+              <% end %>
             </li>
             <li class="nav-item">
+             <%= link_to dashboard_path, class: "nav-link" do %>
              <i class="far fa-address-card"></i>
-             <%= link_to "My account", dashboard_path, class: "nav-link" %>
+             <p>My account</p>
+             <% end %>
             </li>
             <% if user_signed_in? %>
             <li class="nav-item">
+              <%= link_to chats_path, class: "nav-link" do %>
               <i class="fas fa-comments"></i>
-              <%= link_to "Chat", chats_path, class: "nav-link" %>
+              <p>Chat</p>
+              <% end %>
             </li>
             <li class="nav-item">
+              <%= link_to destroy_user_session_path, method: :delete, remote: false, class: "nav-link" do %>
               <i class="fas fa-user-circle"></i>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, remote: false, class: "nav-link" %>
+              <p>Log out</p>
+              <% end %>
             </li>
           <% else %>
             <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" do %>
               <i class="fas fa-user-circle"></i>
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+              <p>Login</p>
+              <% end %>
             </li>
           <% end %>
         </ul>
