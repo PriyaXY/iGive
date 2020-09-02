@@ -30,7 +30,7 @@
         </div>
           <% if user_signed_in? && current_user.image %>
            <div class="avatar-navbar">
-              <div class="message-navbar">Hi, <strong><%= "#{current_user.first_name}" %></strong></div>
+              <div class="message-navbar">Hi, <span><strong><%= "#{current_user.first_name}" %></strong></span></div>
               <div class="avatar-navbar-wrap"><%= image_tag current_user.image, alt: "alttext"%></div>
            </div>
            <% end %>

@@ -1,1 +1,8 @@
 // Specific CSS for your home-page
+
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .home-heading{
+    font-size:1.7em;
+  }
+}

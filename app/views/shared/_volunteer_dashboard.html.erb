@@ -1,7 +1,7 @@
 <div class="container mt-5">
 
     <div class="user-info">
-      <h1>Welcome back, <span><%= "#{current_user.first_name}" %></span></h1>
+      <h1>Your account details</h1>
       <div class="text-center">
         <i class="far fa-envelope"></i> <%= "#{current_user.email}" %>
       </div>
@@ -39,7 +39,7 @@
     </div>
 
     <div class="user-level-bar mt-2">
-        <h4 class="my-4">Increase your superhero level with more missions</h4>
+        <h4 class="my-4">Increase your superhero level with more missions!</h4>
         <%= render "shared/progress_bar", volunteer_completed_missions: @volunteer_completed_missions %>
     </div>
 
@@ -60,18 +60,18 @@
     </div>
 
       <!-- view pending missions -->
-      <h3 class="mt-5 mb-3">My Pending Missions</h3>
+      <h3 class="mt-5 mb-3 section-heading">My Pending Missions</h3>
 
       <div class="list-group">
         <% if @pending_volunteer_missions.any? %>
         <% @pending_volunteer_missions.each do |booking| %>
          <div class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
+            <div class="w-100 dashboard ">
                 <div class="warning"><%= (Date.today..booking.mission.start_date).count %> days left!</div>
                 <h5 class="mt-2 mb-2 mission-title text-left">
                   <%= link_to "#{booking.mission.title}", mission_path(booking.mission) %>
                 </h5>
-                <small><%= booking.mission.charity.name %></small>
+                <small>Charity: <%= booking.mission.charity.name %></small>
             </div>
           </div>
         <% end %>
@@ -82,7 +82,7 @@
         <% end %>
       </div>
 
-      <h3 class="mt-5 mb-3 text-center">My Upcoming Missions</h3>
+      <h3 class="mt-5 mb-3 section-heading">My Upcoming Missions</h3>
 
 
       <!-- Upcoming missions -->
@@ -90,10 +90,10 @@
         <% if @accepted_volunteer_missions.any? %>
         <% @accepted_volunteer_missions.each do |booking| %>
         <div class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
+            <div class="w-100 dashboard ">
               <div class="warning"><%= (Date.today..booking.mission.start_date).count %> days left!</div>
                <h5 class="mt-2 mb-2 mission-title"><%= link_to "#{booking.mission.title}", mission_path(booking.mission) %></h5>
-               <small><%= booking.mission.charity.name %></small>
+               <small>Charity: <%= booking.mission.charity.name %></small>
             </div>
           </div>
         <% end %>
@@ -105,7 +105,7 @@
       </div>
 
 
-      <h3 class="mt-5 mb-3 text-center">My Completed Missions</h3>
+      <h3 class="mt-5 mb-3 section-heading">My Completed Missions</h3>
 
 
        <!-- completed missions -->
@@ -113,9 +113,9 @@
           <% if @volunteer_completed_missions.any? %>
           <% @volunteer_completed_missions.each do |booking|%>
           <div class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
+            <div class="w-100 dashboard ">
               <h5 class="mt-2 mb-2 mission-title"><%= booking.mission.title %></h5>
-              <small><%= booking.mission.charity.name %></small>
+              <small>Charity: <%= booking.mission.charity.name %></small>
             </div>
           </div>
         <% end %>
