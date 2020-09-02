@@ -35,11 +35,11 @@ import { skillBar } from '../bar/skill_bar';
 
 import { initChatroomCable } from '../channels/chatroom_channel';
 
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-  initChatroomCable();
-});
+// document.addEventListener('turbolinks:load', () => {
+//   // Call your functions here, e.g:
+//   // initSelect2();
+//   initChatroomCable();
+// });
 
 
 // skill bar in dashboard
@@ -51,7 +51,7 @@ document.addEventListener('turbolinks:load', () => {
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   skillBar();
-
+  initChatroomCable();
 })
 
 

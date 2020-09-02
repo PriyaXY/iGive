@@ -23,16 +23,16 @@
       <div class="user-level-badge col-sm-8 col-md-12">
         <p>Your superhero status</p>
         <% if  @volunteer_completed_missions.count < 5 %>
-            <%= image_tag "heart.png", alt: "alttext"  %>
+            <%= image_tag "shield-level-1.png", alt: "alttext"  %>
             <p><%= "Beginner"  %></p>
           <% elsif @volunteer_completed_missions.count < 10 %>
-            <%= image_tag "sheild-first-time-user.png", alt: "alttext"%>
+            <%= image_tag "shield-level-2.png", alt: "alttext"%>
             <p><%= "Intermediate"  %></p>
           <% elsif @volunteer_completed_missions.count <  15 %>
-            <%= image_tag "shield-average.png", alt: "alttext" %>
+            <%= image_tag "shield-level-3.png", alt: "alttext" %>
             <p><%= "Advanced"  %></p>
           <% else @volunteer_completed_missions.count >=  15 %>
-            <%= image_tag "shield-super-user.png", alt: "alttext" %>
+            <%= image_tag "shield-level-4.png", alt: "alttext" %>
             <p><%= "Superhero"  %></p>
         <% end %>
       </div>
