@@ -1,0 +1,46 @@
+.mission-list h1{
+  font-size:1.8em;
+  margin: 15px 0 10px 0;
+  color:#D54062;
+}
+
+.mission-list h2{
+  font-size:1.5em;
+  color:#D54062;
+}
+
+.mission-list .card-body{
+  background:#fff;
+  padding: 0 0.8em;
+}
+
+.mission-list .list-group{
+  padding-left:0;
+  list-style:none;
+}
+
+.mission-list  .list-group .list-content{
+  margin-bottom:10px;
+}
+
+
+.mission-list .fa-user-check{
+  width: 40px;
+}
+
+
+.already-applied{
+  font-size:14px;
+  color:#799351;
+}
+
+.mission-list .card{
+  background:#fff;
+  border:none;
+}
+
+.collapse .card-body, .show .card-body{
+  background:#F4F4F4;
+}
+
+
