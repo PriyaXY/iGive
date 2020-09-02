@@ -6,8 +6,8 @@
     <div class="container-search-bar my-5 col-12 col-md-8 ">
       <form action="/missions" method="get">
         <div class="input-group md-form form-sm form-2 pl-0">
-          <input class="form-control my-0 py-3 red-border w-50" type="text" autocomplete="on" placeholder="..the area" name="query" aria-label="Search">
-          <input class="form-control my-0 py-3 red-border " name="distance" placeholder=" ..Km">
+          <input class="form-control my-0 py-3 red-border w-50" type="text" autocomplete="on" placeholder="local neighbourhood.." name="query" aria-label="Search">
+          <input class="form-control my-0 py-3 red-border " name="distance" placeholder="km..">
           <div class="input-group-append">
            <!--  <input type="submit" class="input-group-text red lighten-3" id="basic-text1"> -->
             <button type="submit" class="input-group-text red lighten-3" id="basic-text1">
@@ -23,11 +23,11 @@
     <div class="category-container">
       <%= simple_form_for missions_path, method: :get do |f| %>
         <%#= f.input :category, as: :check_boxes, collection: Mission::CATEGORIES, item_wrapper_class:"inline", class: "check-list-box" %>
-        <div class="d-flex flex-wrap justify-content-around pb-3">
+        <div class="d-flex flex-wrap justify-content-between pb-3 ml-4">
           <%= f.input_field :category, as: :check_boxes, collection: Mission::CATEGORIES, item_wrapper_class: "missioncategoryselection " %>
         </div>
         <div class="form-actions">
-          <%= f.submit "Submit", class: "btn btn-rounded-sm btn-info" %>
+          <%= f.submit "Submit", class: "btn btn-rounded-sm btn-info category-button" %>
         </div>
       <% end %>
     </div>
