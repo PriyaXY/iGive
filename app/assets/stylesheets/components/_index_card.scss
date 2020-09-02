@@ -1,8 +1,8 @@
 
 .index-card-container {
   overflow: hidden;
-  height: 180px;
-  width: 100%;
+  height: 120px;
+  width: 100% ;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -13,66 +13,55 @@
 
 .index-card-container-urgent {
   overflow: hidden;
-  height: 180px;
+  height: 120px;
   width: 100% ;
   background: white;
-  box-shadow: 0 0 10px #D54062;
-  // border: 3px solid #D54062;
+  box-shadow: 0 0 10px #F2A16B;
   display: flex;
   flex-direction: row;
   margin: 8px auto;
   font-size: 10px;
 }
 .index-card-image {
-  width: 200px;
+  width: 120px;
   & img {
     height: 100%;
-    width: 150px;
+    width: 120px;
     object-fit: cover;
   }
 }
 
-
-.index-card-text {
-  padding-bottom: 8px;
-  padding-top:6px;
-}
-
-.index-card-image{
-  margin-right:8px;
-}
-
-.index-card-main-info ul {
-  list-style-type: none;
-  padding-left:0;
-  margin-bottom:10px;
-}
-
-.index-card-main-info a {
-  font-size: 16px;
-  color: #799351;
-  font-style: bold;
-  overflow: hidden;
-  & p {
-    margin-bottom:0px;
-  }
-}
-.index-card-extra-info-urgent {
-  text-align: left;
-}
-
-.index-card-title-urgent {
-  color:#D54062;
-}
-
-.index-card-extra-info {
+.index-card-main-info-urgent {
+  line-height: 1px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2px;
+  margin-left: 24px;
+  color: #F2A16B;
+  & h3 {
+    font-size: 12px;
+    font-style: bold;
+  }
+}
+
+
+.index-card-main-info {
+  line-height: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2px;
+  margin-left: 24px;
+  color: #799351;
+  & h3 {
+    font-size: 12px;
+    font-style: bold;
+  }
 }
 
 .index-icon {
-  margin-top:10px;
+  margin-top: 1px;
 }
 
 .index-apply-button {
