@@ -1,7 +1,7 @@
 
 .index-card-container {
   overflow: hidden;
-  height: 200px;
+  height: 180px;
   width: 100%;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -34,15 +34,18 @@
 
 
 .index-card-text {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 8px;
   padding-bottom: 8px;
+  padding-top:6px;
+}
+
+.index-card-image{
+  margin-right:8px;
 }
 
 .index-card-main-info ul {
   list-style-type: none;
-  padding-inline-start: 8px;
+  padding-left:0;
+  margin-bottom:10px;
 }
 
 .index-card-main-info a {
@@ -51,16 +54,15 @@
   font-style: bold;
   overflow: hidden;
   & p {
-    width: 180px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+    margin-bottom:0px;
   }
 }
 .index-card-extra-info-urgent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: left;
+}
+
+.index-card-title-urgent {
+  color:#D54062;
 }
 
 .index-card-extra-info {
@@ -70,18 +72,18 @@
 }
 
 .index-icon {
-  margin-top: 8px;
+  margin-top:10px;
 }
 
 .index-apply-button {
   font-size: 10px;
-  margin-bottom: 8px;
+  margin-bottom: 0;
   margin-right: 2px;
 }
 
 .index-urgent-button {
   font-size: 12px;
-  margin-bottom: 8px;
+  margin-bottom: 0;
   margin-right: 2px;
 }
 
