@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container dashboard-container">
 
 <% if current_user.charity.nil? %>
    <%= render "shared/volunteer_dashboard", pending_volunteer_missions: @pending_volunteer_missions, accepted_volunteer_missions: @accepted_volunteer_missions, volunteer_completed_missions: @volunteer_completed_missions %>
