@@ -1,7 +1,7 @@
 <%# simple_form_for :missions, url: missions_path do |f| %>
 <%# f.collection_check_boxes :category_ids, Mission::CATEGORIES, :id, :name %>
 <%# end %>
-
+<div class="all-mission">
   <div class="container-fluid search-box mb-3">
     <div class="container-search-bar my-5 col-12 col-md-8 ">
       <form action="/missions" method="get">
@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container ">
     <div class="category-container">
       <%= simple_form_for missions_path, method: :get do |f| %>
         <%#= f.input :category, as: :check_boxes, collection: Mission::CATEGORIES, item_wrapper_class:"inline", class: "check-list-box" %>
@@ -43,3 +43,5 @@
     <% end %>
   </div>
 
+<!-- page container -->
+</div>
