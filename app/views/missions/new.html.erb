@@ -8,7 +8,7 @@
           <%= f.input :title %>
           <%= f.input :description, input_html: { 'rows' => 20, 'cols' => 10, placeholder: 'Write the details of your mission...'} %>
           <%= f.input :address %>
-          <%= f.input :category, :collection => ['Children', 'Environment', 'Food', 'Animals', 'Women', 'Admin', 'Retail'] %>
+          <%= f.input :category, :collection => ['Children', 'Environment', 'Food', 'Animals', 'Women', 'Admin', 'Retail', 'Health'] %>
           <%= f.input :number_of_volunteers %>
           <%= f.input :photos, input_html: {multiple: true}, as: :file, :label => "Upload photos",class: "btn btn-primary" %>
         </div>
