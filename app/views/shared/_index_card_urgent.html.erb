@@ -12,7 +12,7 @@
     <div class="list-group w-100">
       <div class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="date"><%="Starting date: #{mission.start_date.strftime('%d/%m/%Y')}"%></div>
-          <h5 class="mission-title mission-pending text-left">
+          <h5 class="mission-title text-left">
               <%= link_to "#{mission.title.capitalize}", mission_path(mission) %>
           </h5>
         <div class="icon">

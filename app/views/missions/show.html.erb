@@ -32,8 +32,8 @@
 <div class="container mission-list">
 <h1>
   <% if @mission.users.include?(current_user) %>
-    <span class="already-applied"><i class="fas fa-check-circle"></i> applied</span>
-  <% end %><br>
+    <div><span class="already-applied"><i class="fas fa-check-circle"></i> applied</span></div>
+  <% end %>
   <%= @mission.title.capitalize %>
 </h1>
   <div class="d-flex flex-row bd-highlight ">
