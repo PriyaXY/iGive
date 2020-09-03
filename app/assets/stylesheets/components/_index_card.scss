@@ -7,8 +7,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: row;
-  margin: 8px auto;
-  font-size: 10px;
+  margin: 12px auto;
 }
 
 .index-card-container-urgent {
@@ -16,12 +15,13 @@
   height: 120px;
   width: 100% ;
   background: white;
-  box-shadow: 0 0 10px #D54062;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: row;
   margin: 8px auto;
   font-size: 10px;
 }
+
 // .index-card-image {
 //   width: 120px;
 //   & img {
@@ -30,6 +30,7 @@
 //     object-fit: cover;
 //   }
 // }
+
 .card-text-orange {
   color: #F2A16B;
   text-shadow: 0 0 1px rgba(0,0,0,0.2)
@@ -60,7 +61,6 @@
   }
 }
 
-
 .index-card-main-info {
   line-height: 1px;
   display: flex;
@@ -81,22 +81,20 @@
 
 .index-card-button {
   color: white;
-  font-size: 10px;
-  margin-top: 8px;
+  font-size: 0.7em;
+  padding: 6px 10px;
 }
 
 .index-apply-button {
-  font-size: 10px;
-  margin-bottom: 0;
-  margin-right: 2px;
   color: white;
+  font-size: 0.7em;
+  padding: 6px 10px;
 }
 
 .index-urgent-button {
-  font-size: 12px;
-  margin-bottom: 0;
-  margin-right: 2px;
   color: white;
+  font-size: 0.7em;
+  padding: 6px 10px;
 }
 
 

@@ -11,3 +11,83 @@
   padding-left:5px;
   padding-right:5px;
 }
+
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .index-card-container .mission-title{
+    font-size:1em;
+    margin:0;
+    height: 37px;
+  }
+
+  .index-card-container .mission-title a{
+    font-size:0.9em;
+    font-weight:bold;
+  }
+
+  .index-card-container .list-group-item{
+    padding:0.40rem 0.6rem;
+    border:none;
+  }
+
+  .index-card-container .list-group-item .date{
+    font-size:0.7em;
+  }
+
+  .index-card-container .list-group-item span{
+    font-size:0.7em;
+  }
+
+  .index-card-container .list-group-item .icon .fa-user{
+    font-size:0.8em;
+    width: 10px;
+    height: 10px;
+  }
+
+  .index-card-container .list-group-item .icon .fa-user-check{
+    font-size:0.8em;
+    width: 10px;
+    height: 10px;
+  }
+
+  .index-card-container .list-group-item .icon .fa-user-plus{
+    font-size:0.8em;
+    width: 10px;
+    height: 10px;
+  }
+
+  .index-card-container, .index-card-container-urgent{
+     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+  }
+
+  .index-card-container-urgent:nth-child(1) { animation-delay: .01s; }
+  .index-card-container-urgent:nth-child(2) { animation-delay: .02s; }
+  .index-card-container-urgent:nth-child(3) { animation-delay: .03s; }
+  .index-card-container-urgent:nth-child(4) { animation-delay: .04s; }
+  .index-card-container-urgent:nth-child(5) { animation-delay: .05s; }
+  .index-card-container-urgent:nth-child(6) { animation-delay: .06s; }
+  .index-card-container-urgent:nth-child(7) { animation-delay: .07s; }
+  .index-card-container-urgent:nth-child(8) { animation-delay: .08s; }
+  .index-card-container-urgent:nth-child(9) { animation-delay: .09s; }
+  .index-card-container-urgent:nth-child(10) { animation-delay: .1s; }
+
+
+  .index-card-container:nth-child(1) { animation-delay: .12s; }
+  .index-card-container:nth-child(2) { animation-delay: .15s; }
+  .index-card-container:nth-child(3) { animation-delay: .2s; }
+  .index-card-container:nth-child(4) { animation-delay: .2.5s; }
+  .index-card-container:nth-child(5) { animation-delay: .3s; }
+  .index-card-container:nth-child(6) { animation-delay: .3.5s; }
+  .index-card-container:nth-child(7) { animation-delay: .4s; }
+  .index-card-container:nth-child(8) { animation-delay: .45s; }
+  .index-card-container:nth-child(9) { animation-delay: .5s; }
+  .index-card-container:nth-child(10) { animation-delay: .55s; }
+
+}
+
+
+
