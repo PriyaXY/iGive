@@ -4,11 +4,11 @@
       <h1 class="my-4">Add Your Charity</h1>
           <%= simple_form_for [ @charity ] do |f| %>
           <div class="form-inputs">
-            <%= f.input :name, label: "Charity name" %>
+            <%= f.input :name, label: "Charity name", required: true %>
             <%= f.input :phone_number %>
-            <%= f.input :website, input_html: { placeholder: "Your charity's website url..."} %>
-            <%= f.input :description, label: "Description (250 words max)", input_html: { 'rows' => 5, 'cols' => 10, maxlength: 250, placeholder: 'Some more information about your charity here...'} %>
-            <%= f.input :photos, input_html: {multiple: true}, as: :file, :label => "Upload charity logo", class: "btn btn-primary" %>
+            <%= f.input :website, input_html: { placeholder: "Your charity's website url..."}, required: true %>
+            <%= f.input :description, label: "Description (250 words max)", input_html: { 'rows' => 5, 'cols' => 10, maxlength: 250, placeholder: 'Some more information about your charity here...'}, required: true %>
+            <%= f.input :photos, input_html: {multiple: true}, as: :file, :label => "Upload charity logo", class: "btn btn-primary", required: true %>
           </div>
           <div class="form-actions">
           <%= f.submit "Submit", class: "btn btn-info btn-rounded" %>
