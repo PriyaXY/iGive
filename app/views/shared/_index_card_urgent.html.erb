@@ -1,5 +1,5 @@
-<%=link_to mission_path(mission) do %>
-  <div class="index-card-container-urgent">
+<div class="index-card-container-urgent">
+    <%=link_to mission_path(mission) do %>
     <div class="index-card-image">
       <% if mission.photos.attached? %>
         <%= cl_image_tag mission.photos.first.key, class: "card-image" %>
@@ -7,6 +7,30 @@
         <%= image_tag "carousel-1.jpg", class: "card-image" %>
       <% end %>
     </div>
+    <% end %>
+
+    <div class="list-group w-100">
+      <div class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="date"><%="Starting date: #{mission.start_date.strftime('%d/%m/%Y')}"%></div>
+          <h5 class="mission-title text-left">
+              <%= link_to "#{mission.title.capitalize}", mission_path(mission) %>
+          </h5>
+        <div class="icon">
+          <span>Looking for</span>  <%= render "shared/icon_count", mission: mission %>
+        </div>
+        <div class="apply-button">
+          <% if current_user.charity.blank? && !mission.users.include?(current_user)%>
+            <%= simple_form_for [mission, Booking.new] do |f| %>
+              <%= f.button :submit, 'URGENT: Apply Now', class: "btn btn-rounded-sm btn-success index-card-button" %>
+            <% end %>
+          <% elsif mission.users.include?(current_user) %>
+            <%= link_to 'See Your Application', dashboard_path, class: "btn btn-rounded-sm btn-success index-card-button"%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!--
     <div class="index-card-text">
       <div class="index-card-main-info-urgent">
         <div class="text-card-pink">
@@ -31,9 +55,10 @@
           <% end %>
         </div>
       </div>
-    </div>
-  </div>
-<% end %>
+    </div> -->
+
+<!-- end page container-->
+</div>
 
 
 

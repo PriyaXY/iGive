@@ -1,5 +1,5 @@
-.all-mission {
-
+.all-mission .mission-title a:hover {
+  opacity:0.9;
 }
 
 .all-mission .category-container{
@@ -11,3 +11,169 @@
   padding-left:5px;
   padding-right:5px;
 }
+
+
+@media (min-width: 100px) and (max-width: 575px) {
+
+  /* urgent card only */
+
+  .index-card-container-urgent .mission-title{
+    font-size:1em;
+    margin:0;
+    height: 37px;
+  }
+
+  .index-card-container-urgent .mission-title a{
+    font-size:0.9em;
+    font-weight:bold;
+    color:#fff;
+  }
+
+  .index-card-container-urgent .list-group-item{
+    padding:0.40rem 0.6rem;
+    border:none;
+    background: #D54062;
+    color:#f6adbd;
+  }
+
+  .index-card-container-urgent .list-group-item .date{
+    font-size:0.7em;
+  }
+
+  .index-card-container-urgent .list-group-item span{
+    font-size:0.7em;
+  }
+
+  .index-card-container-urgent .list-group-item .icon .fa-user{
+    font-size:0.8em;
+    width: 10px;
+    height: 10px;
+    color:#fff;
+  }
+
+  .index-card-container-urgent .list-group-item .icon .fa-user-check{
+    font-size:0.8em;
+    width: 10px;
+    height: 10px;
+    color:#799351;
+  }
+
+  .index-card-container-urgent .list-group-item .icon .fa-user-plus{
+    font-size:0.8em;
+    width: 10px;
+    height: 10px;
+    color:#fff;
+  }
+
+  .index-card-container-urgent .index-card-button{
+    background:#EBDC87 ;
+    color:#111;
+  }
+
+  /* non urgent cards */
+
+  .index-card-container .mission-title{
+    font-size:1em;
+    margin:0;
+    height: 37px;
+    color:#FFA36C ;
+  }
+
+  .index-card-container .mission-title a{
+    font-size:0.9em;
+    font-weight:bold;
+    color:#FFA36C ;
+  }
+
+  .index-card-container .list-group-item{
+    padding:0.40rem 0.6rem;
+    border:none;
+  }
+
+  .index-card-container .list-group-item .date{
+    font-size:0.7em;
+  }
+
+  .index-card-container .list-group-item span{
+    font-size:0.7em;
+  }
+
+  .index-card-container .list-group-item .icon .fa-user{
+    font-size:0.8em;
+    width: 10px;
+    height: 10px;
+  }
+
+  .index-card-container .list-group-item .icon .fa-user-check{
+    font-size:0.8em;
+    width: 10px;
+    height: 10px;
+  }
+
+  .index-card-container .list-group-item .icon .fa-user-plus{
+    font-size:0.8em;
+    width: 10px;
+    height: 10px;
+  }
+
+  /* animation for cards */
+
+  // .index-card-container, .index-card-container-urgent{
+  //    -webkit-animation: fadeInLeft  2s; /* Safari, Chrome and Opera > 12.1 */
+  //      -moz-animation: fadeInLeft  2s; /* Firefox < 16 */
+  //       -ms-animation: fadeInLeft  2s; /* Internet Explorer */
+  //        -o-animation: fadeInLeft  2s; /* Opera < 12.1 */
+  //           animation: fadeInLeft  2s;
+  // }
+
+  // @keyframes fadeInLeft  {
+  //     from { opacity: 0; transform: translateX(-20px);}
+  //     to   { opacity: 1; transform: translateX(0px);}
+  // }
+
+  // /* Firefox < 16 */
+  // @-moz-keyframes fadeInLeft  {
+  //     from { opacity: 0; transform: translateX(-20px);}
+  //     to   { opacity: 1; transform: translateX(0px);}
+  // }
+
+  // /* Safari, Chrome and Opera > 12.1 */
+  // @-webkit-keyframes fadeInLeft  {
+  //     from { opacity: 0; transform: translateX(-20px);}
+  //     to   { opacity: 1; transform: translateX(0px);}
+  // }
+
+  // /* Internet Explorer */
+  // @-ms-keyframes fadeInLeft  {
+  //     from { opacity: 0; transform: translateX(-20px);}
+  //     to   { opacity: 1; transform: translateX(0px);}
+  // }
+
+
+  // .index-card-container-urgent:nth-child(1) { animation-delay: .02s; }
+  // .index-card-container-urgent:nth-child(2) { animation-delay: .04s; }
+  // .index-card-container-urgent:nth-child(3) { animation-delay: .06s; }
+  // .index-card-container-urgent:nth-child(4) { animation-delay: .08s; }
+  // .index-card-container-urgent:nth-child(5) { animation-delay: .1s; }
+  // .index-card-container-urgent:nth-child(6) { animation-delay: .12s; }
+  // .index-card-container-urgent:nth-child(7) { animation-delay: .14s; }
+  // .index-card-container-urgent:nth-child(8) { animation-delay: .16s; }
+  // .index-card-container-urgent:nth-child(9) { animation-delay: .18s; }
+  // .index-card-container-urgent:nth-child(10) { animation-delay: .2s; }
+
+
+  // .index-card-container:nth-child(1) { animation-delay: 1s; }
+  // .index-card-container:nth-child(2) { animation-delay: 1.2s; }
+  // .index-card-container:nth-child(3) { animation-delay: 1.4s; }
+  // .index-card-container:nth-child(4) { animation-delay: 1.6s; }
+  // .index-card-container:nth-child(5) { animation-delay: 1.8s; }
+  // .index-card-container:nth-child(6) { animation-delay: 2s; }
+  // .index-card-container:nth-child(7) { animation-delay: 2.2s; }
+  // .index-card-container:nth-child(8) { animation-delay: 2.4s; }
+  // .index-card-container:nth-child(9) { animation-delay: 2.6s; }
+  // .index-card-container:nth-child(10) { animation-delay: 2.8s; }
+
+}
+
+
+

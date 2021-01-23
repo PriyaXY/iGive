@@ -3,11 +3,11 @@
     <ul>
       <% if current_user.charity %>
         <% current_user.booking_chatrooms.each do | chatroom | %>
-          <li class="mission-chat"><i class="far fa-comment-dots"></i> <%= link_to chatroom.user.first_name.capitalize, chatroom_path(chatroom) %></li>
+          <li class="mission-chat"><i class="far fa-comment-dots"></i> <%= link_to chatroom.user.first_name, chatroom_path(chatroom) %></li>
         <% end %>
       <% else %>
         <% current_user.chatrooms.each do | chatroom | %>
-          <li class="mission-chat"><i class="far fa-comment-dots"></i> <%= link_to chatroom.booking.mission.title.capitalize, chatroom_path(chatroom) %></li>
+          <li class="mission-chat"><i class="far fa-comment-dots"></i> <%= link_to chatroom.booking.mission.title, chatroom_path(chatroom) %></li>
         <% end %>
       <% end %>
     </ul>

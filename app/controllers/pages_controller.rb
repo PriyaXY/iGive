@@ -27,7 +27,7 @@ class PagesController < ApplicationController
      if current_user.bookings.includes(:mission).where('missions.start_date < ?', Date.today).references(:mission).nil?
       @volunteer_completed_missions = []
     else
-      @volunteer_completed_missions = bookings.includes(:mission).where('missions.start_date < ?', Date.today).references(:mission)
+      @volunteer_completed_missions = current_user.bookings.includes(:mission).where('missions.start_date < ?', Date.today).references(:mission)
     end
     if current_user.charity
       @pending_charity_applications = current_user.charity_bookings.where(status: "pending")
